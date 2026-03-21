@@ -101,8 +101,28 @@ export default function Gallery(){
         <div className={`modal-overlay ${closing ? 'fade-out' : 'fade-in'}`} onClick={handleClose}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <button className="close-btn" onClick={handleClose}>✕</button>
-            <img src={selected.src} alt={selected.name} style={{maxWidth:'90vw', maxHeight:'80vh', borderRadius:8}} />
-            <p className="muted" style={{marginTop:8, fontSize:'0.8rem'}}>{selected.name}</p>
+            {(() => {
+              const currentIndex = photos.findIndex(p => p === selected)
+              const prevIndex = currentIndex > 0 ? currentIndex - 1 : photos.length - 1
+              const nextIndex = currentIndex < photos.length - 1 ? currentIndex + 1 : 0
+              return (
+                <>
+                  <button className="nav-btn prev-btn" onClick={() => setSelected(photos[prevIndex])} title="Previous photo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </button>
+                  <img src={selected.src} alt={selected.name} className="modal-image" />
+                  <button className="nav-btn next-btn" onClick={() => setSelected(photos[nextIndex])} title="Next photo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
+                  <p className="muted photo-caption">{selected.name}</p>
+                  <p className="photo-counter" style={{marginTop: '8px', fontSize: '0.75rem', textAlign: 'center'}}>{currentIndex + 1} / {photos.length}</p>
+                </>
+              )
+            })()}
           </div>
         </div>
       )}
