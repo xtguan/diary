@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
     base: process.env.VITE_BASE || (isProd ? '/diary/' : '/'),
     plugins: [react()],
     // In development, bind to all interfaces so localhost resolves on IPv4 and IPv6
-    server: isProd ? undefined : { host: true }
+    server: isProd ? undefined : { host: true },
+    assetsInclude: ['**/*.JPG', '**/*.JPEG', '**/*.PNG', '**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.svg']
   }
 })
