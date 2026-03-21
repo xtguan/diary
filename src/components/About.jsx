@@ -9,11 +9,11 @@ export default function About(){
 
       <div className="about-body">
         <p className="about-intro">
-          Hi, I'm <strong>Xiaotang Guan</strong> — a software engineer, photographer, and home cook who is endlessly curious about the world and the people in it.
+          Hello. I'm <strong>Xiaotang Guan</strong> — a software engineer, photographer, and passionate home cook with a deep curiosity about the world and the people who inhabit it.
         </p>
 
         <p>
-          By day, I work in tech, building modern web experiences and solving problems that occasionally make me want to throw my laptop out a window (I haven't yet). I love the craft of software — the logic, the creativity, the satisfaction of making something that actually works. But I've always needed an outlet beyond the screen.
+          By profession, I build thoughtful digital experiences and solve complex technical challenges. I'm genuinely drawn to the craft of software engineering — the logic, the elegance of a well-designed solution, and that particular satisfaction when something you've created actually works. But I've learned that intellectual pursuits alone don't fully nourish a life. I need creative outlets that ground me in the tangible world.
         </p>
 
         {/* Fade-out teaser when collapsed */}
@@ -22,23 +22,23 @@ export default function About(){
         {/* Expanded content */}
         <div className={`about-extra ${open ? 'about-extra-open' : 'about-extra-closed'}`}>
           <p>
-            That outlet comes in a few forms. One of them is <strong>photography</strong>. There's something about the act of framing the world through a lens that teaches you to see differently — to notice the quality of light at 5pm, the way a stranger's expression shifts for just a second, the texture of a wall you'd otherwise walk past without thinking. I shoot both on my phone and on a DSLR, and I love both for completely different reasons.
+            One of these outlets is <strong>photography</strong>. Through a lens, I've learned to see differently — to appreciate the particular quality of light at dusk, to notice how an expression changes in a fleeting moment, to find beauty in overlooked details. Whether I'm shooting with my phone or my DSLR, each tool teaches me something new about perspective and intention.
           </p>
 
           <p>
-            Another is <strong>cooking</strong>. This one runs deep. The kitchen has always been my most honest creative space — somewhere I can experiment freely, make mistakes without consequence (well, mostly), and produce something tangible that I can share with people I care about. I love the alchemy of it: how a few simple ingredients, treated with the right attention, can become something genuinely moving. I cook a lot of Asian food, especially dishes rooted in the flavours I grew up with, but I'm always exploring. Homemade pasta, slow braises, weeknight stir-fries that somehow taste better than they have any right to — it's all fair game.
+            Another is <strong>cooking</strong>, and this one runs particularly deep. The kitchen is my most honest creative space — a place where I can experiment freely, where failures teach as much as successes, and where I create something I can genuinely share with the people I care about. There's real alchemy in it: simple ingredients, treated with attention and care, becoming something that moves people. I draw heavily from the Asian cuisines of my heritage, but I'm endlessly curious about culinary traditions from everywhere. From homemade pasta to slow-cooked braises to weeknight stir-fries that somehow taste far better than they should — it's all part of the conversation.
           </p>
 
           <p>
-            I started this site as a way to gather the things I love in one place — my <strong>travel stories</strong>, my <strong>photography</strong>, my <strong>kitchen experiments</strong>, and the occasional reflection on life in general. Not for any particular audience, really. More as a way of remembering. Of documenting the small, meaningful things that don't make the highlight reel but are somehow the whole point.
+            I created this site as a space to gather the things that matter to me — my <strong>travels</strong>, my <strong>photographs</strong>, my <strong>kitchen experiments</strong>, and reflections on what it means to live deliberately. It's not created for any particular audience; rather, it's my way of holding onto moments that feel significant. To document the small, meaningful experiences that don't always make it into mainstream narratives but somehow feel like the whole point.
           </p>
 
           <p>
-            I believe good food tells a story. A trip you take changes you in ways you don't fully understand until you're back home eating something that reminds you of it. A photograph is a promise to yourself that you were really there, really present, really paying attention.
+            I believe that good food carries stories. Travel changes us in ways we don't fully understand until later. A photograph is a quiet promise to yourself that you were truly present, fully paying attention, genuinely engaged with the moment.
           </p>
 
           <p>
-            This is my attempt to hold onto all of that.
+            This site is my attempt to honor all of that.
           </p>
 
           <p className="about-sign">— Xiaotang</p>
