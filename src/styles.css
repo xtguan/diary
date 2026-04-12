@@ -293,10 +293,11 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
 }
 .magazine-card-title {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #0f172a;
   margin: 0 0 12px;
   line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 .magazine-card-read {
   font-size: 0.8rem;

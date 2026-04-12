@@ -76,7 +76,7 @@ export default function Blog(){
       <div className="tabs">
         <button className={`tab ${category === 'all' ? 'active' : ''}`} onClick={() => setCategory('all')}>All</button>
         <button className={`tab ${category === 'travel' ? 'active' : ''}`} onClick={() => setCategory('travel')}>Travel</button>
-        <button className={`tab ${category === 'thoughts' ? 'active' : ''}`} onClick={() => setCategory('thoughts')}>Sharing Thoughts</button>
+        <button className={`tab ${category === 'Sharing Thoughts' ? 'active' : ''}`} onClick={() => setCategory('Sharing Thoughts')}>Sharing Thoughts</button>
       </div>
 
       {/* Magazine-style post cards */}
