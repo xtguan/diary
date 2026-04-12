@@ -6,7 +6,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:12p
 .brand{font-weight:700;font-size:1.15rem}
 .nav a{margin-left:18px;color:var(--muted);text-decoration:none}
 main{display:flex;flex-direction:column;gap:48px;padding-top:18px}
-.card{padding:18px;border-radius:10px;background:#fbfdfe;box-shadow:0 4px 14px rgba(2,6,23,0.04)}
+.card{padding:18px;border-radius:10px;background:#ffffff;box-shadow:0 4px 14px rgba(2,6,23,0.04)}
 .muted{color:var(--muted)}
 .projects-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .project{padding:12px;border-radius:8px;background:white;box-shadow:0 1px 4px rgba(2,6,23,0.04)}
@@ -19,6 +19,23 @@ main{display:flex;flex-direction:column;gap:48px;padding-top:18px}
 
 /* Details card styling and animation */
 .project-details{position:relative;padding:16px;border-radius:8px;background:#ffffff;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+
+@media (max-width: 640px) {
+  .project-details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    border-radius: 0;
+    z-index: 1000;
+    padding: 60px 16px 20px 16px;
+  }
+}
 /* enter/exit animations */
 .project-details.fade-in{animation:fadeInUp 220ms ease}
 .project-details.fade-out{animation:fadeOut 200ms ease forwards}
