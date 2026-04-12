@@ -1,7 +1,7 @@
 :root{--bg:#ffffff;--muted:#6b7280;--accent:#0ea5a4}
 *{box-sizing:border-box}
 body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a}
-.site{max-width:1000px;margin:0 auto;padding:24px}
+.site{width:95%;max-width:1200px;margin:0 auto;padding:24px}
 header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .brand{font-weight:700;font-size:1.15rem}
 .nav a{margin-left:18px;color:var(--muted);text-decoration:none}
@@ -15,6 +15,7 @@ main{display:flex;flex-direction:column;gap:48px;padding-top:18px}
 /* Project thumbnails and interactions */
 .project img.thumb{width:100%;height:120px;object-fit:cover;border-radius:6px;margin-bottom:8px}
 .project:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(2,6,23,0.08);transition:all 180ms ease}
+.project-detail-image{width:100%;max-height:260px;object-fit:cover;border-radius:10px;margin:16px 0}
 
 /* Details card styling and animation */
 .project-details{position:relative;padding:16px;border-radius:8px;background:#ffffff;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
@@ -23,6 +24,8 @@ main{display:flex;flex-direction:column;gap:48px;padding-top:18px}
 .project-details.fade-out{animation:fadeOut 200ms ease forwards}
 .project-details .close-btn{position:absolute;top:10px;right:10px;background:rgba(2,6,23,0.04);border:0;color:var(--muted);cursor:pointer;font-weight:600;width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:background 140ms ease,color 140ms ease}
 .project-details .close-btn:hover{background:var(--accent);color:white}
+.project-details .close-btn-bottom{margin-top:20px;background:var(--accent);color:white;border:0;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600;transition:background 140ms ease}
+.project-details .close-btn-bottom:hover{background:#0c8a8a}
 
 @keyframes fadeInUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(8px)}}
@@ -30,6 +33,24 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
 .social a{margin:0 8px;color:var(--muted);text-decoration:none}
 
 @media (max-width:640px){.nav a{margin-left:10px}}
+
+/* Responsive adjustments for content width */
+@media (max-width: 768px) {
+  .site { padding: 12px; }
+  .card { padding: 12px; }
+  main { gap: 24px; padding-top: 12px; }
+  .projects-list { gap: 12px; }
+  .project { padding: 8px; }
+}
+
+@media (max-width: 480px) {
+  .site { padding: 8px; width: 100%; }
+  .card { padding: 8px; }
+  main { gap: 16px; padding-top: 8px; }
+  .projects-list { grid-template-columns: 1fr; gap: 8px; }
+  .project { padding: 6px; }
+  .project img.thumb { height: 100px; }
+}
 
 /* Category tabs for Blog */
 .tabs{display:inline-flex;gap:8px;margin-top:12px;margin-bottom:8px}
@@ -44,7 +65,7 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
 
 /* ─── About Section ──────────────────────────────────────── */
 
-.about-section { max-width: 720px; }
+.about-section { width: 100%; }
 
 .about-body {
   margin-top: 16px;
