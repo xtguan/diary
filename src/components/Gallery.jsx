@@ -95,7 +95,7 @@ export default function Gallery(){
       <div className="gallery">
         {photos.map((img, i) => (
           <div key={i} className="gallery-thumb" onClick={() => setSelected(img)}>
-            <img src={img.src} alt={img.name} />
+            <img src={img.src} alt={img.name} onClick={() => setSelected(img)} />
           </div>
         ))}
       </div>

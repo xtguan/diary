@@ -229,6 +229,7 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
   object-fit: cover;
   border-radius: 8px;
   transition: transform 300ms ease;
+  cursor: pointer;
 }
 .gallery-thumb:hover img {
   transform: scale(1.05);
