@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 const ALBUM_NAMES = {
-  '2024-01-07-moving-house': 'Moving House',
-  '2024-02-25-street-photo': 'Street Photography',
-  '2025-10-05-photos-moon':  'Moon',
+  '2022-10-03-park':        'Guild Park & Gardens',
+  '2023-12-04-xmas':        'Toronto Christmas',
+  '2024-01-07-moving-house': 'Quiet Evening',
+  '2024-02-25-street-photo': 'Peter Street',
+  '2024-03-03-brunch':      'Brunch Outing',
+  '2025-10-05-photos-moon':  'Moon Night',
   '2025-12-25-tampa':        'Tampa Christmas',
   '__root__':                'Other',
 }

@@ -1,4 +1,4 @@
-:root{--bg:#ffffff;--muted:#6b7280;--accent:#0ea5a4}
+:root{--bg:#fafafa;--muted:#6b7280;--accent:#0ea5a4}
 *{box-sizing:border-box}
 body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a}
 .site{width:95%;max-width:1200px;margin:0 auto;padding:24px}
