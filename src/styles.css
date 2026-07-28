@@ -75,6 +75,15 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
 .tab:hover{background:rgba(2,6,23,0.03);color:var(--accent)}
 .tab.active{background:#ffffff;border-color:rgba(2,6,23,0.06);box-shadow:0 6px 18px rgba(2,6,23,0.04);color:var(--accent);transform:translateY(-2px)}
 
+.blog-controls{margin-top:16px}
+.blog-search{display:flex;flex-direction:column;gap:8px;max-width:520px}
+.blog-search-label{font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.blog-search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(2,6,23,0.1);font-size:0.95rem;background:#fff;color:#0f172a;outline:none;transition:border-color 140ms ease,box-shadow 140ms ease}
+.blog-search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,165,164,0.15)}
+
+.post-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tag-chip{font-size:0.7rem;font-weight:700;letter-spacing:0.03em;color:#0f766e;background:rgba(14,165,164,0.12);border:1px solid rgba(14,165,164,0.18);padding:3px 8px;border-radius:999px}
+
 @media (max-width:480px){
 	.tabs{flex-wrap:wrap;gap:6px}
 	.tab{padding:8px 10px}
@@ -382,6 +391,22 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
 }
 .magazine-back:hover { color: var(--accent); }
 
+.magazine-link{
+  margin-left:14px;
+  margin-bottom:28px;
+  border:1px solid rgba(2,6,23,0.12);
+  background:#fff;
+  color:#0f172a;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.02em;
+  cursor:pointer;
+  transition:border-color 140ms ease,color 140ms ease,background 140ms ease;
+}
+.magazine-link:hover{border-color:var(--accent);color:var(--accent);background:rgba(14,165,164,0.05)}
+
 .magazine-content {
   font-size: 1.05rem;
   line-height: 1.85;
@@ -454,6 +479,7 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
   .magazine-hero-overlay { padding: 20px; }
   .magazine-figure img { max-width: 100%; }
   .magazine-content { font-size: 0.97rem; }
+  .magazine-link{display:inline-block;margin-left:0;margin-top:-18px}
 }
 
 /* Modal overlay for gallery */

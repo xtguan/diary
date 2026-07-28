@@ -1,9 +1,11 @@
 import thumb from '../photos/2025-12-25-tampa/tampa-clearwater-beach-1.jpg'
 
 export default {
+  slug: 'reflections-on-solitude-and-strength',
   title: 'Reflections on Solitude and Strength',
   date: '2025-10-06',
-  category: 'Sharing Thoughts',
+  category: 'thoughts',
+  tags: ['thoughts', 'reflection', 'solitude', 'growth'],
   thumbnail: thumb,
   content: `# Reflections on Solitude and Strength
 

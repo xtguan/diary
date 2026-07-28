@@ -1,5 +1,25 @@
 import thumb from '../photos/2025-12-25-tampa/IMG_9686.jpg'
 
+const photoModules = import.meta.glob('../photos/**/*.{jpg,jpeg,png,svg,JPG,JPEG,PNG}', { eager: true, import: 'default' })
+
+const photoLookup = Object.fromEntries(
+  Object.entries(photoModules).map(([path, src]) => {
+    const normalized = path
+      .replace('../photos/', '')
+      .replace(/^\/+/, '')
+      .replace(/^src\//, '')
+    return [normalized, src]
+  })
+)
+
+function resolveBlogImage(src) {
+  const cleaned = src.replace(/^\/+/, '').replace(/^src\//, '')
+  const normalized = cleaned.replace(/^photos\//, '')
+  if (photoLookup[normalized]) return photoLookup[normalized]
+  const basename = normalized.split('/').pop()
+  return photoLookup[basename] || src
+}
+
 const content = `
 # A Christmas Trip to Tampa
 
@@ -197,11 +217,14 @@ And then it was the last frame. The last morning. The cab to the airport, the re
 
 *Already thinking about going back.*
 `
+  .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_match, alt, src) => `![${alt}](${resolveBlogImage(src)})`)
 
 export default {
+  slug: 'christmas-trip-to-tampa',
   title: 'A Christmas Trip to Tampa',
   date: '2025-12-28',
   category: 'travel',
+  tags: ['travel', 'tampa', 'photography', 'florida'],
   thumbnail: thumb,
   content
 }
