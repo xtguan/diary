@@ -1,29 +1,29 @@
 import thumb from '../assets/photos/sample1.svg'
 
 const content = `
-# A New York, Boston, and Rhode Island Trip Plan
+# ✈️ A New York, Boston, and Rhode Island Trip Plan
 
 This is a public-friendly version of a planned 7-day trip through New York, Boston, and Newport. I wanted to keep the itinerary useful without turning it into a purely logistical document, so I leaned into the feeling of the trip: the contrast between urban intensity and coastal calm, the pleasure of wandering, and the way a good trip often becomes more memorable in the gaps between the planned stops.
 
-## Why this trip
+## 🌍 Why this trip
 
 This route feels like a strong balance of energy and atmosphere. New York offers scale, motion, and constant stimulation. Boston feels more compact, reflective, and rooted in history. Newport adds a quieter, more spacious rhythm, with water, architecture, and the kind of view that makes you slow down.
 
 It is the kind of journey that appeals to me because it mixes the familiar and the unexpected. A city can hold both grand landmarks and small, unremarkable moments that end up becoming the most vivid memories.
 
-## The route at a glance
+## 🗺️ The route at a glance
 
 - Begin in New York City with a few days of museums, parks, skyline views, and neighborhood wandering.
 - Continue to Boston for a shorter stay shaped around historical streets, waterfront walks, and food.
 - Spend a day trip in Rhode Island to experience Newport and the coast at a slower pace.
 
-## Why this route works well
+## ✅ Why this route works well
 
 This itinerary works because it balances iconic places with enough breathing room to enjoy them. New York gives the trip energy and scale. Boston offers a more compact and atmospheric historical core. Newport provides a softer, slower contrast that makes the journey feel complete rather than repetitive.
 
 A good multi-city trip like this works best when the pace is thoughtful. Too many major sights in a row can make the trip feel like a checklist, while too much open time can leave the experience feeling underbuilt. This plan tries to land in the middle: enough structure to make the days feel purposeful, enough flexibility to keep the trip feeling alive.
 
-## Planning notes
+## 🧭 Planning notes
 
 If you are planning a similar trip, a few practical choices make a big difference.
 
@@ -33,17 +33,17 @@ If you are planning a similar trip, a few practical choices make a big differenc
 - Leave room for spontaneous stops, especially in neighborhoods that seem lively on foot.
 - Choose one major museum or landmark per day rather than forcing too much into a single block of time.
 
-## What to expect in each city
+## 🏙️ What to expect in each city
 
-### New York
+### 🗽 New York
 
 New York rewards a flexible approach. The best days often come from combining one major attraction with a long walk and a meal in a neighborhood that feels worth lingering in. It is a city where the atmosphere matters almost as much as the destination itself.
 
-### Boston
+### 🦞 Boston
 
 Boston is easier to enjoy when you slow down. Its streets, history, and architecture are most rewarding when you walk them deliberately. It is a place for side streets, older buildings, waterfront views, and a less rushed feeling than the New York days.
 
-### Newport
+### 🌊 Newport
 
 Newport is especially appealing as a break from city pace. It is not about doing everything; it is about getting a strong sense of place, enjoying the coastline, and giving the trip some visual and emotional variation.
 
@@ -84,7 +84,7 @@ The final day remains simple and calm. The trip ends not with a dramatic finale,
 - The pleasure of seeing a place from different angles: museums, neighborhoods, waterfronts, and long walks.
 - The way a trip like this gives you both structure and room to notice what you did not plan for.
 
-## Practical notes
+## 🧳 Practical notes
 
 - Public transit is likely to be the easiest way to move around in both cities.
 - Comfortable walking shoes will matter more than anything else.
@@ -93,7 +93,7 @@ The final day remains simple and calm. The trip ends not with a dramatic finale,
 - The itinerary is designed to balance major highlights with time to wander, which I think is the best way to travel.
 - If you are trying to make the trip feel more relaxed, prioritize a few meaningful stops over a long list of must-sees.
 
-## A good planning mindset
+## 💡 A good planning mindset
 
 The best travel plans are rarely the most ambitious ones. They are the ones that leave enough space for the unexpected: a street you did not mean to walk down, a café that feels worth lingering in, an hour of slow observation that ends up being the part you remember most clearly.
 
