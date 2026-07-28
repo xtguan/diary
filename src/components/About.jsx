@@ -5,9 +5,31 @@ export default function About(){
 
   return (
     <section id="about" className="card about-section">
-      <h2>About Me</h2>
+      <div className="hero-intro">
+        <div className="hero-copy">
+          <p className="hero-eyebrow">Currently building</p>
+          <h2>Thoughtful software, quiet stories, and everyday beauty.</h2>
+          <p className="hero-text">
+            I’m a software engineer who cares about calm interfaces, meaningful products, and the small moments that make life feel vivid.
+          </p>
+          <div className="hero-actions">
+            <a href="#projects" className="hero-link primary">See my work</a>
+            <a href="#blog" className="hero-link secondary">Read the blog</a>
+          </div>
+        </div>
+
+        <div className="hero-focus">
+          <h3>Current focus</h3>
+          <ul>
+            <li>Building thoughtful digital experiences</li>
+            <li>Writing more travel and reflection posts</li>
+            <li>Capturing everyday light through photography</li>
+          </ul>
+        </div>
+      </div>
 
       <div className="about-body">
+        <h2>About Me</h2>
         <p className="about-intro">
           Hello. I'm <strong>Xiaotang Guan</strong> — a software engineer, photographer, and passionate home cook with a deep curiosity about the world and the people who inhabit it.
         </p>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import About from './components/About'
+import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
@@ -20,6 +21,7 @@ export default function App() {
         <Header />
         <main>
           <About />
+          <Skills />
           <Projects />
           <Blog />
           <Gallery />
