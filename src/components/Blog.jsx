@@ -215,8 +215,8 @@ export default function Blog(){
 
   return (
     <section id="blog" className="card">
-      <h2>Blog</h2>
-      <p className="muted">Short notes and longer posts. Search, filter by topic, then click to read.</p>
+      <h2>Blog & Learning Notes</h2>
+      <p className="muted">Short notes, longer posts, and current learning updates. Search, filter by topic, then click to read.</p>
 
       <div className="blog-controls">
         <label className="blog-search" htmlFor="blog-search-input">
@@ -242,26 +242,41 @@ export default function Blog(){
 
       {/* Magazine-style post cards */}
       <div className="magazine-grid">
-        {filteredPosts.map((p, i) => (
-          <article key={i} className="magazine-card" onClick={() => openPost(p)}>
-            {p.thumbnail && (
-              <div className="magazine-card-img">
-                <img src={p.thumbnail} alt={p.title} />
-                <span className="magazine-card-category">{formatCategoryLabel(p.category)}</span>
+        {filteredPosts.map((p, i) => {
+          const hasDisplayableThumbnail = Boolean(
+            p.thumbnail &&
+            typeof p.thumbnail === 'string' &&
+            !p.thumbnail.includes('sample')
+          )
+
+          return (
+            <article key={i} className="magazine-card" onClick={() => openPost(p)}>
+              <div className={`magazine-card-img ${hasDisplayableThumbnail ? '' : 'magazine-card-img-placeholder'}`}>
+                {hasDisplayableThumbnail ? (
+                  <>
+                    <img src={p.thumbnail} alt={p.title} />
+                    <span className="magazine-card-category">{formatCategoryLabel(p.category)}</span>
+                  </>
+                ) : (
+                  <div className="magazine-card-placeholder">
+                    <span className="magazine-card-placeholder-kicker">{formatCategoryLabel(p.category)}</span>
+                    <h3>{p.title}</h3>
+                  </div>
+                )}
               </div>
-            )}
-            <div className="magazine-card-body">
-              <p className="magazine-card-date">{new Date(p.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-              <h3 className="magazine-card-title">{p.title}</h3>
-              <div className="post-tags">
-                {p.tags?.slice(0, 4).map((tag) => (
-                  <span key={tag} className="tag-chip">#{tag.replace(/\s+/g, '-')}</span>
-                ))}
+              <div className="magazine-card-body">
+                <p className="magazine-card-date">{new Date(p.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <h3 className="magazine-card-title">{p.title}</h3>
+                <div className="post-tags">
+                  {p.tags?.slice(0, 4).map((tag) => (
+                    <span key={tag} className="tag-chip">#{tag.replace(/\s+/g, '-')}</span>
+                  ))}
+                </div>
+                <span className="magazine-card-read">{p.category === 'learning' ? 'Read note →' : 'Read story →'}</span>
               </div>
-              <span className="magazine-card-read">Read story →</span>
-            </div>
-          </article>
-        ))}
+            </article>
+          )
+        })}
       </div>
       {filteredPosts.length === 0 && (
         <p className="muted" style={{ marginTop: 18 }}>
