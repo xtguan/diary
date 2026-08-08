@@ -1,7 +1,11 @@
-import thumb from '../assets/photos/sample1.svg'
-
-const content = `
-# ✈️ A New York, Boston, and Rhode Island Trip Plan
+export default {
+  slug: 'new-york-boston-rhode-island-trip-plan',
+  title: 'A New York, Boston, and Rhode Island Trip Plan',
+  date: '2026-07-27',
+  category: 'travel',
+  tags: ['travel', 'new-york', 'boston', 'rhode-island', 'planning'],
+  thumbnail: null,
+  content: `# ✈️ A New York, Boston, and Rhode Island Trip Plan
 
 This is a public-friendly version of a planned 7-day trip through New York, Boston, and Newport. I wanted to keep the itinerary useful without turning it into a purely logistical document, so I leaned into the feeling of the trip: the contrast between urban intensity and coastal calm, the pleasure of wandering, and the way a good trip often becomes more memorable in the gaps between the planned stops.
 
@@ -55,7 +59,7 @@ The first day is meant to feel like a soft landing rather than a sprint. After a
 
 ### Day 2 — Central Park and art
 
-This feels like the ideal kind of urban day: morning light in the park, a long museum visit, and then a slower evening in one of the city’s more atmospheric neighborhoods. I like the idea of pairing something expansive with something intimate, giving the day both scale and texture.
+This feels like the ideal kind of urban day: morning light in the park, a long museum visit, and then a slower evening in one of the city's more atmospheric neighborhoods. I like the idea of pairing something expansive with something intimate, giving the day both scale and texture.
 
 ### Day 3 — Travel to Boston
 
@@ -77,9 +81,9 @@ This day is left intentionally a bit flexible. That is one of the best parts of 
 
 The final day remains simple and calm. The trip ends not with a dramatic finale, but with the feeling of having collected a few good days and several small moments that will stick with you after the travel itself is over.
 
-## What I’m looking forward to
+## What I'm looking forward to
 
-- The contrast between New York’s intensity and Boston’s steadier rhythm.
+- The contrast between New York's intensity and Boston's steadier rhythm.
 - Wandering through streets that feel full of stories, whether grand or ordinary.
 - The pleasure of seeing a place from different angles: museums, neighborhoods, waterfronts, and long walks.
 - The way a trip like this gives you both structure and room to notice what you did not plan for.
@@ -99,13 +103,4 @@ The best travel plans are rarely the most ambitious ones. They are the ones that
 
 This is the kind of trip that feels best when it leaves room for surprise, for quiet, and for the small details that only become meaningful after the fact.
 `
-
-export default {
-  slug: 'new-york-boston-rhode-island-trip-plan',
-  title: 'A New York, Boston, and Rhode Island Trip Plan',
-  date: '2026-07-27',
-  category: 'travel',
-  tags: ['travel', 'new-york', 'boston', 'rhode-island', 'planning'],
-  thumbnail: thumb,
-  content
 }
