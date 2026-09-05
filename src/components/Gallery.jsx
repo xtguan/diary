@@ -8,6 +8,8 @@ const ALBUM_NAMES = {
   '2024-03-03-brunch':      'Brunch Outing',
   '2025-10-05-photos-moon':  'Moon Night',
   '2025-12-25-tampa':        'Tampa Christmas',
+  '2026-08-31-new-york':      'New York Trip',
+  '2026-09-01-boston':        'Boston Trip',
   '__root__':                'Other',
 }
 

@@ -8,7 +8,8 @@ const root = path.resolve(__dirname, '..')
 
 const posts = [
   { slug: 'christmas-trip-to-tampa', title: 'A Christmas Trip to Tampa' },
-  { slug: 'reflections-on-solitude-and-strength', title: 'Reflections on Solitude and Strength' }
+  { slug: 'reflections-on-solitude-and-strength', title: 'Reflections on Solitude and Strength' },
+  { slug: 'new-york-the-met-and-city-walks', title: 'New York: The Met, Broadway, and City Walks' }
 ]
 
 const baseUrl = 'https://xtguan.github.io/diary'
