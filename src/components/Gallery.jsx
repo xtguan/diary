@@ -10,6 +10,8 @@ const ALBUM_NAMES = {
   '2025-12-25-tampa':        'Tampa Christmas',
   '2026-08-31-new-york':      'New York Trip',
   '2026-09-01-boston':        'Boston Trip',
+  '2026-09-03-new-port':      'Newport Trip',
+  '2026-09-food':             'New York & Boston Food',
   '__root__':                'Other',
 }
 
