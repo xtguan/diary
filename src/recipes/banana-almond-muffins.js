@@ -1,10 +1,36 @@
-import thumbnail from '../assets/bakery/banana-almond-muffins.svg'
+import thumbnail from '../assets/bakery/banana-almond-muffins-1.jpg'
+import platePhoto from '../assets/bakery/banana-almond-muffins-plate-1.jpg'
+import platePhoto2 from '../assets/bakery/banana-almond-muffins-plate-2.jpg'
+import panPhoto from '../assets/bakery/banana-almond-muffins-pan.jpg'
 
 export default {
   slug: 'low-gi-4-flour-banana-almond-muffins',
   date: '2026-10-23',
   category: 'low-gi',
   thumbnail,
+  photos: [
+    {
+      src: platePhoto,
+      caption: {
+        en: 'A batch cooling on the plate. They firm up as they sit.',
+        zh: '晾在盘子上的这一批，放凉后会定型。',
+      },
+    },
+    {
+      src: platePhoto2,
+      caption: {
+        en: 'Five from the six-cup tin.',
+        zh: '六连模里出炉的五个。',
+      },
+    },
+    {
+      src: panPhoto,
+      caption: {
+        en: 'Six at a time, straight from the oven.',
+        zh: '一次出炉六个。',
+      },
+    },
+  ],
   content: {
     en: {
       categoryLabel: 'Low-GI',

@@ -1,10 +1,12 @@
+import thumbnail from '../assets/blog/new-york-met-cover.jpg'
+
 export default {
   slug: 'new-york-the-met-and-city-walks',
   title: 'New York: The Met, Broadway, and City Walks',
   date: '2026-09-04',
   category: 'travel',
   tags: ['travel', 'new-york', 'the-met', 'broadway', 'parks'],
-  thumbnail: null,
+  thumbnail,
   content: `# New York: The Met, Broadway, and City Walks
 
 *September 2026 — New York City*

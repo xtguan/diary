@@ -1,28 +1,10 @@
-import platePhoto from '../assets/bakery/mini-fruit-tarts-plate-1.jpg'
-import platePhoto2 from '../assets/bakery/mini-fruit-tarts-plate-2.jpg'
-import panPhoto from '../assets/bakery/mini-fruit-tarts-pan.jpg'
+import illustration from '../assets/bakery/mini-fruit-tarts.svg'
 
 export default {
   slug: 'sugar-reduced-mini-fruit-crumble-tarts',
   date: '2026-10-23',
   category: 'sugar-reduced',
-  thumbnail: platePhoto,
-  photos: [
-    {
-      src: platePhoto2,
-      caption: {
-        en: 'Five tarts, cooling on the plate. They firm up as they sit.',
-        zh: '晾在盘子上的五个小塔，放凉后会定型。',
-      },
-    },
-    {
-      src: panPhoto,
-      caption: {
-        en: 'Six at a time, straight from the oven.',
-        zh: '一次出炉六个。',
-      },
-    },
-  ],
+  thumbnail: illustration,
   content: {
     en: {
       categoryLabel: 'Sugar-reduced',

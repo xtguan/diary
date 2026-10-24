@@ -86,7 +86,7 @@ Adding bakery recipes
 - Register a new recipe by importing it in `src/recipes/index.js` and adding it to
   the `recipes` array. The newest `date` is listed first automatically.
 - `thumbnail` is optional. Without it, the card renders a warm placeholder;
-  illustrations and recipe photos live in `src/assets/bakery/`.
+  recipe photos and illustrations live in `src/assets/bakery/`.
 - Add an optional `photos` array for extra shots on the detail page. Each entry
   takes a local image `src` and a bilingual `caption`.
 - Recipes open at `?recipe=<slug>#bakery`, and the "Print recipe" button hides the
@@ -94,7 +94,7 @@ Adding bakery recipes
 
 Example recipe skeleton (`src/recipes/my-recipe.js`):
 ```javascript
-import thumbnail from '../assets/bakery/my-recipe.svg'
+import thumbnail from '../assets/bakery/my-recipe.jpg'
 import detailPhoto from '../assets/bakery/my-recipe-photo.jpg'
 
 export default {
@@ -126,3 +126,9 @@ export default {
   },
 }
 ```
+
+Source photos
+
+- Original photos that are not served directly live in `source-photos/` (bakery and project originals).
+- The site uses the optimized copies in `src/assets/` (for example `src/assets/bakery/` and `src/assets/photos/fraud-cover.jpg`).
+- Keep `source-photos/` when clearing your Downloads folder; it is the archive for future re-cropping or re-exporting.

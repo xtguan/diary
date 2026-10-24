@@ -1,3 +1,5 @@
+import thumbnail from '../assets/blog/new-york-boston-rhode-island-cover.jpg'
+
 const content = `
 # ✈️ A New York, Boston, and Rhode Island Trip Plan
 
@@ -104,7 +106,7 @@ export default {
   date: '2026-07-27',
   category: 'travel',
   tags: ['travel', 'new-york', 'boston', 'rhode-island', 'planning'],
-  thumbnail: null,
+  thumbnail,
   content: `# ✈️ A New York, Boston, and Rhode Island Trip Plan
 
 This is a public-friendly version of a planned 7-day trip through New York, Boston, and Newport. I wanted to keep the itinerary useful without turning it into a purely logistical document, so I leaned into the feeling of the trip: the contrast between urban intensity and coastal calm, the pleasure of wandering, and the way a good trip often becomes more memorable in the gaps between the planned stops.

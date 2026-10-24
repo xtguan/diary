@@ -3,6 +3,7 @@ import thumb1 from '../assets/photos/sample1.svg'
 import thumb2 from '../assets/photos/sample2.svg'
 import frtbDetail from '../assets/photos/frtb-detail.png'
 import fraudDetail from '../assets/photos/fraud-detail.png'
+import fraudCover from '../assets/photos/fraud-cover.jpg'
 
 const projects = [
   {
@@ -70,7 +71,7 @@ const projects = [
   },
   {
     title: 'Fraud IT — Systems Integration',
-    thumbnail: fraudDetail,
+    thumbnail: fraudCover,
     subtitle: 'Served as Integration Lead bridging architecture and development teams for scalable fraud systems.',
     tech: ['Java', 'Spring Boot', 'APIs', 'Azure Service Bus', 'Kafka', 'OpenShift', 'REST', 'SOAP'],
     detailImage: fraudDetail,

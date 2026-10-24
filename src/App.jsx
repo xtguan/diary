@@ -8,6 +8,7 @@ import Bakery from './components/Bakery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Gallery from './components/Gallery'
+import BackToTop from './components/BackToTop'
 import Seo from './components/Seo'
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
           <Contact />
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </>
   )
