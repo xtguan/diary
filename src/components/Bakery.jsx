@@ -4,7 +4,8 @@ import recipes from '../recipes'
 const UI = {
   en: {
     eyebrow: 'Baking for the gainfully employed',
-    heading: 'Corporate Slave’s Bakery',
+    heading: 'The Corporate Captive’s Kitchen & Bakery',
+    subtitle: '1 Day of Prep. 7 Days of Sanity. Zero Sugar Spikes, Zero Overpriced Groceries.',
     intro:
       'For people keeping an eye on blood sugar who still want something sweet, and would rather not spend a week’s grocery money on specialty flours. Everything here is made with Walmart Great Value basics, baked in a small batch, and kept in the fridge to eat through the week. Portions are small on purpose. So is the grocery bill. Corporate slaves and wage slaves welcome.',
     houseRules:
@@ -13,7 +14,7 @@ const UI = {
     english: 'EN',
     chinese: '中文',
     view: 'View recipe',
-    back: '← Corporate Slave’s Bakery',
+    back: '← Kitchen & Bakery',
     print: 'Print recipe',
     ingredients: 'Ingredients',
     method: 'Method',
@@ -26,7 +27,8 @@ const UI = {
   },
   zh: {
     eyebrow: '下班后的厨房',
-    heading: '打工人的烘焙间',
+    heading: '公司囚徒的厨房与烘焙坊',
+    subtitle: '1 天备餐，7 天理智。零血糖飙升，零高价食材。',
     intro:
       '写给需要控糖、又想吃点甜的上班族：不想为几样烘焙原料花掉一周的菜钱，也不想一次烤一大盘。这里的东西都用沃尔玛 Great Value 这类基础食材，小份量烤好，放冰箱慢慢吃一周。份量是故意做小的，菜钱也是。打工牛马，欢迎入座。',
     houseRules: '本店规矩：食材买便宜的，一次烤小份，糖少放一点，还要留到周三。',
@@ -34,7 +36,7 @@ const UI = {
     english: 'EN',
     chinese: '中文',
     view: '查看食谱',
-    back: '← 打工人的烘焙间',
+    back: '← 厨房与烘焙坊',
     print: '打印食谱',
     ingredients: '食材',
     method: '做法',
@@ -117,7 +119,7 @@ export default function Bakery() {
   useEffect(() => {
     if (!selectedRecipe) return
     const previousTitle = document.title
-    document.title = `${recipeText(selectedRecipe, lang).title} | Corporate Slave’s Bakery | Xiaotang Guan`
+    document.title = `${recipeText(selectedRecipe, lang).title} | The Corporate Captive’s Kitchen & Bakery | Xiaotang Guan`
     return () => {
       document.title = previousTitle
     }
@@ -314,6 +316,7 @@ export default function Bakery() {
           <div className="bakery-heading-copy">
             <p className="bakery-eyebrow">{ui.eyebrow}</p>
             <h2>{ui.heading}</h2>
+            <p className="bakery-subtitle">{ui.subtitle}</p>
             <p className="bakery-intro">{ui.intro}</p>
             <p className="bakery-house-rules">{ui.houseRules}</p>
           </div>

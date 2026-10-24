@@ -9,7 +9,8 @@ export default function Header(){
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#blog">Blog</a>
-        <a href="#bakery" title="Corporate Slave’s Bakery">Bakery</a>
+        <a href="#bakery" title="The Corporate Captive’s Kitchen & Bakery">Bakery</a>
+        <a href="#meal-prep" title="Clocked Out & Cooked Up">Meal Prep</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </nav>

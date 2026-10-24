@@ -26,6 +26,7 @@ export default function About(){
             <li>Writing more travel and reflection posts</li>
             <li>Capturing everyday light through photography</li>
             <li>Baking lower-sugar desserts worth repeating</li>
+            <li>Prepping a week of meals at a time</li>
           </ul>
         </div>
       </div>

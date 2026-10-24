@@ -128,8 +128,19 @@ export default function Projects(){
 
   return (
     <section id="projects" className="card">
-      <h2>Projects & Work</h2>
-      <p className="muted">Selected projects and case studies. Click a project to expand and see details.</p>
+      <div className="section-head">
+        <p className="section-eyebrow">The day job</p>
+        <h2>Projects & Work</h2>
+        <p className="section-subtitle">
+          Systems I have built, led, and occasionally rescued from a deadline.
+        </p>
+        <p className="section-intro">
+          A small selection of the work that pays the bills: market risk, fraud integration, and the unglamorous plumbing that makes large systems behave. Some of it is technical; some of it is the longer lesson in getting people and systems to agree. Click a project for the full story.
+        </p>
+        <p className="section-house-rules">
+          House rules: simple systems, honest estimates, clear ownership, and no heroics after 6 p.m.
+        </p>
+      </div>
 
       <div className="projects-list">
         {projects.map((p, i) => (

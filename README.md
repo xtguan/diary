@@ -58,6 +58,9 @@ Adding blog posts
 - To categorize posts, add a `category` field. Use one of the recommended values:
 	- `travel` — travel / trip posts
 	- `thoughts` — short essays, reflections, or sharing thoughts
+	- `study-notes` — study notes, reference guides and learning updates
+- Longer study notes can be kept as `.md` files under `src/posts/notes/` and imported with `?raw` (see `post-7.js`). Explicit `<a id="...">` anchors are moved onto the matching headings automatically, so a note's table of contents keeps working.
+- Set `format: 'note'` on a post to use the text-first study-note card. Note cards show `summary` and an estimated reading time instead of a cover photo.
 
 Example post template (`src/posts/new-post.js`):
 ```javascript
@@ -127,8 +130,14 @@ export default {
 }
 ```
 
+Adding meal prep weeks
+
+- Weekly meal preps live in `src/meal-prep/` as JS modules with bilingual `content`.
+- Each week has a `slug`, `date`, `thumbnail`, an optional `photos` gallery with bilingual captions, and the weekly plan, dishes, prep steps, storage notes and kitchen notes.
+- Add a new week by importing it in `src/meal-prep/index.js` and adding it to the array. Newest dates are listed first.
+
 Source photos
 
-- Original photos that are not served directly live in `source-photos/` (bakery and project originals).
-- The site uses the optimized copies in `src/assets/` (for example `src/assets/bakery/` and `src/assets/photos/fraud-cover.jpg`).
+- Original photos that are not served directly live in `source-photos/` (bakery, meal prep and project originals).
+- The site uses the optimized copies in `src/assets/` (for example `src/assets/bakery/`, `src/assets/meal-prep/` and `src/assets/photos/fraud-cover.jpg`).
 - Keep `source-photos/` when clearing your Downloads folder; it is the archive for future re-cropping or re-exporting.

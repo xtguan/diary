@@ -2,8 +2,10 @@ export default {
   slug: 'current-learning-notes-dfs-and-topological-sorting',
   title: 'Current learning notes: DFS and topological sorting',
   date: '2026-08-08',
-  category: 'learning',
-  tags: ['learning', 'algorithms', 'dfs', 'topological-sorting'],
+  category: 'study-notes',
+  tags: ['study-notes', 'algorithms', 'dfs', 'topological-sorting'],
+  format: 'note',
+  summary: 'DFS and topological sort, the connection between them, and the edge cases worth remembering.',
   thumbnail: null,
   content: `# Current learning notes: DFS and topological sorting
 

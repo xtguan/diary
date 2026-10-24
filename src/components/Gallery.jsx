@@ -62,8 +62,19 @@ export default function Gallery(){
   if (!activeAlbum) {
     return (
       <section id="gallery" className="card">
-        <h2>Photo Gallery</h2>
-        <p className="muted">Browse by album — click one to explore.</p>
+        <div className="section-head">
+          <p className="section-eyebrow">Outside the browser</p>
+          <h2>Photo Gallery</h2>
+          <p className="section-subtitle">
+            Small moments, bad weather, good light, and the places in between.
+          </p>
+          <p className="section-intro">
+            These are the photos I keep coming back to: parks, trips, food, and the ordinary corners that looked worth stopping for. Browse by album; every set opens to a full view. It is not a professional archive. It is a record of paying attention.
+          </p>
+          <p className="section-house-rules">
+            House rules: bring the camera, wait for the light, keep the accidents, and never crop out the weather.
+          </p>
+        </div>
         <div className="album-grid">
           {albumKeys.map(key => {
             const photos = albums[key]

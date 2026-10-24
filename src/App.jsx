@@ -5,6 +5,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Blog from './components/Blog'
 import Bakery from './components/Bakery'
+import MealPrep from './components/MealPrep'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Gallery from './components/Gallery'
@@ -27,6 +28,7 @@ export default function App() {
           <Projects />
           <Blog />
           <Bakery />
+          <MealPrep />
           <Gallery />
           <Contact />
         </main>

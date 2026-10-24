@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 function slugify(text = '') {
   return text
@@ -14,6 +15,7 @@ function slugify(text = '') {
 function normalizeCategory(value = '') {
   const normalized = value.toString().trim().toLowerCase()
   if (normalized === 'sharing thoughts') return 'thoughts'
+  if (normalized === 'learning') return 'study-notes'
   return normalized || 'uncategorized'
 }
 
@@ -34,6 +36,26 @@ function buildPermalink(slug) {
   const url = new URL(window.location.href)
   url.searchParams.set('post', slug)
   return url.toString()
+}
+
+function formatPostDate(iso) {
+  return new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
+
+function estimateReadingTime(content = '') {
+  if (!content) return 1
+
+  const text = content.replace(/<[^>]+>/g, ' ').replace(/[`*_>#|-]/g, ' ')
+  const cjkCount = (text.match(/[\u3400-\u9fff]/g) || []).length
+  const latinWords = (
+    text.replace(/[\u3400-\u9fff]/g, ' ').match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g) || []
+  ).length
+
+  return Math.max(1, Math.ceil(cjkCount / 350 + latinWords / 220))
 }
 
 function resolveMarkdownImagePaths(content = '', assetMap = {}) {
@@ -61,6 +83,44 @@ function resolveMarkdownImagePaths(content = '', assetMap = {}) {
 
     return match
   })
+}
+
+function normalizeHeadingText(text = '') {
+  return text
+    .toString()
+    .replace(/<[^>]+>/g, '')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+// Long study notes use explicit `<a id="...">` anchors before headings so their
+// table of contents survives mixed Chinese/English heading slugs. Pull those ids
+// out of the markdown and attach them to the matching heading instead.
+function extractHeadingIds(content = '') {
+  if (!content) return { content, headingIds: {} }
+
+  const headingIds = {}
+  const pattern = /<a id="([^"]+)"><\/a>\s*\n(#{1,6})\s+([^\n]+)/g
+  let match
+  while ((match = pattern.exec(content))) {
+    headingIds[normalizeHeadingText(match[3])] = match[1]
+  }
+
+  return {
+    content: content.replace(/<a id="[^"]+"><\/a>\s*\n?/g, ''),
+    headingIds
+  }
+}
+
+function reactNodeText(node) {
+  if (typeof node === 'string' || typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(reactNodeText).join('')
+  if (node && typeof node === 'object' && node.props) return reactNodeText(node.props.children)
+  return ''
 }
 
 export default function Blog(){
@@ -91,12 +151,18 @@ export default function Blog(){
             })
           )
 
+          const resolvedContent = resolveMarkdownImagePaths(post.content, assetMap)
+          const prepared = extractHeadingIds(resolvedContent)
+
           return {
             ...post,
             slug: getPostSlug(post),
             category: normalizedCategory,
             tags: Array.isArray(post.tags) ? post.tags.map(t => t.toLowerCase()) : [normalizedCategory],
-            content: resolveMarkdownImagePaths(post.content, assetMap)
+            format: post.format || (normalizedCategory === 'study-notes' ? 'note' : 'post'),
+            readingTime: post.readingTime || estimateReadingTime(prepared.content),
+            content: prepared.content,
+            headingIds: prepared.headingIds
           }
         })
       )
@@ -163,6 +229,19 @@ export default function Blog(){
   }
 
   if (selected) {
+    const headingFor = (level) => {
+      const Tag = `h${level}`
+      return function MarkdownHeading({ children }) {
+        const text = normalizeHeadingText(reactNodeText(children))
+        const id = selected.headingIds?.[text]
+        return (
+          <Tag id={id} className={`magazine-h${level}`}>
+            {children}
+          </Tag>
+        )
+      }
+    }
+
     return (
       <section id="blog">
         <div className="magazine-post">
@@ -173,7 +252,7 @@ export default function Blog(){
               <div className="magazine-hero-overlay">
                 <span className="magazine-category">{formatCategoryLabel(selected.category)}</span>
                 <h1 className="magazine-title">{selected.title}</h1>
-                <p className="magazine-date">{new Date(selected.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <p className="magazine-date">{formatPostDate(selected.date)} · {selected.readingTime} min read</p>
               </div>
             </div>
           )}
@@ -186,8 +265,16 @@ export default function Blog(){
             <button className="magazine-link" onClick={handleCopyPermalink}>
               {copiedSlug === selected.slug ? 'Permalink copied' : 'Copy permalink'}
             </button>
+            {!selected.thumbnail && (
+              <p className="magazine-detail-meta">
+                <span className="magazine-detail-category">{formatCategoryLabel(selected.category)}</span>
+                <span>{formatPostDate(selected.date)}</span>
+                <span>{selected.readingTime} min read</span>
+              </p>
+            )}
             <div className="magazine-content">
               <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
                 components={{
                   img: ({src, alt}) => (
                     <figure className="magazine-figure">
@@ -195,10 +282,18 @@ export default function Blog(){
                       {alt && <figcaption>{alt}</figcaption>}
                     </figure>
                   ),
-                  h2: ({children}) => <h2 className="magazine-h2">{children}</h2>,
+                  h1: headingFor(1),
+                  h2: headingFor(2),
+                  h3: headingFor(3),
+                  h4: headingFor(4),
                   p: ({children}) => <p className="magazine-p">{children}</p>,
                   em: ({children}) => <em className="magazine-lead">{children}</em>,
                   blockquote: ({children}) => <blockquote className="magazine-quote">{children}</blockquote>,
+                  table: ({children}) => (
+                    <div className="magazine-table-wrap">
+                      <table>{children}</table>
+                    </div>
+                  ),
                 }}
               >
                 {selected.content}
@@ -215,8 +310,19 @@ export default function Blog(){
 
   return (
     <section id="blog" className="card">
-      <h2>Blog & Learning Notes</h2>
-      <p className="muted">Short notes, longer posts, and current learning updates. Search, filter by topic, then click to read.</p>
+      <div className="blog-heading">
+        <p className="blog-eyebrow">After hours</p>
+        <h2>Blog & Learning Notes</h2>
+        <p className="blog-subtitle">
+          Travel journals, personal essays and study notes for people who keep thinking after work.
+        </p>
+        <p className="blog-intro">
+          This is where the longer thoughts live: trips worth remembering, ideas I am still working out, and study notes I wish someone had written for me. Short posts are a coffee break; the longest notes are bilingual and made to come back to. Search by keyword or use the category tabs when you know what you are looking for. Everything here is free to read.
+        </p>
+        <p className="blog-house-rules">
+          House rules: honest notes, sources linked, no SEO filler, and no writing for an algorithm.
+        </p>
+      </div>
 
       <div className="blog-controls">
         <label className="blog-search" htmlFor="blog-search-input">
@@ -249,6 +355,38 @@ export default function Blog(){
             !p.thumbnail.includes('sample')
           )
 
+          if (p.format === 'note') {
+            return (
+              <article
+                key={i}
+                className="magazine-card note-card"
+                onClick={() => openPost(p)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault()
+                    openPost(p)
+                  }
+                }}
+              >
+                <div className="note-card-top">
+                  <span className="note-card-kicker">{formatCategoryLabel(p.category)}</span>
+                  <span className="note-card-readtime">{p.readingTime} min read</span>
+                </div>
+                <h3 className="note-card-title">{p.title}</h3>
+                {p.summary && <p className="note-card-summary">{p.summary}</p>}
+                <div className="post-tags">
+                  {p.tags?.slice(0, 4).map((tag) => (
+                    <span key={tag} className="tag-chip">#{tag.replace(/\s+/g, '-')}</span>
+                  ))}
+                </div>
+                <p className="note-card-date">{formatPostDate(p.date)}</p>
+                <span className="magazine-card-read">Read note →</span>
+              </article>
+            )
+          }
+
           return (
             <article key={i} className="magazine-card" onClick={() => openPost(p)}>
               <div className={`magazine-card-img ${hasDisplayableThumbnail ? '' : 'magazine-card-img-placeholder'}`}>
@@ -265,14 +403,14 @@ export default function Blog(){
                 )}
               </div>
               <div className="magazine-card-body">
-                <p className="magazine-card-date">{new Date(p.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <p className="magazine-card-date">{formatPostDate(p.date)} · {p.readingTime} min read</p>
                 <h3 className="magazine-card-title">{p.title}</h3>
                 <div className="post-tags">
                   {p.tags?.slice(0, 4).map((tag) => (
                     <span key={tag} className="tag-chip">#{tag.replace(/\s+/g, '-')}</span>
                   ))}
                 </div>
-                <span className="magazine-card-read">{p.category === 'learning' ? 'Read note →' : 'Read story →'}</span>
+                <span className="magazine-card-read">Read story →</span>
               </div>
             </article>
           )
