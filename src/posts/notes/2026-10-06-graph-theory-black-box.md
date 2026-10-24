@@ -33,7 +33,7 @@
   - [6.8 最大流 vs 最短路径 Max flow vs shortest path](#compare-8)
   - [6.9 2-SAT 特殊在哪 What makes 2-SAT special](#compare-9)
   - [6.10 一句话总结 One-line summary](#compare-10)
-- [七、性质锚句 Property anchors — sentences you can use in a solution](#anchors)
+- [七、性质锚句 Property anchors - sentences you can use in a solution](#anchors)
   - [7.1 DFS](#anchors-1)
   - [7.2 BFS](#anchors-2)
   - [7.3 Topological Sort](#anchors-3)
@@ -76,7 +76,7 @@ First read the decision flow in Section 3 to find the category. Then look up tha
 | | Prim | 带权 weighted；仅无向 undirected only；图必须连通 connected required | O(m log n) | 最小生成树 minimum spanning tree |
 | 最大流 Max flow（**仅有向 directed only**） | Ford-Fulkerson | 容量必须为**正整数 positive integers**（整数是 FF 特有的 integer is FF-specific） | O(mC) | 最大流 / 带容量的匹配 max flow, matching with capacities |
 | | Edmonds-Karp | 容量为**正数 positive**（可为非整数 non-integer allowed） | O(nm²) | 同上，但不依赖 C same, but runtime does not depend on C |
-| 逻辑约束 Logic（输入是公式不是图 input is a formula, not a graph；其蕴含图有向无权） | 2-SAT | — 不适用 n/a（输入是公式 input is a formula；蕴含图有向无权 its implication graph is directed and unweighted） | O(n + m) | 布尔约束能否同时满足 boolean constraints satisfiable |
+| 逻辑约束 Logic（输入是公式不是图 input is a formula, not a graph；其蕴含图有向无权） | 2-SAT | - 不适用 n/a（输入是公式 input is a formula；蕴含图有向无权 its implication graph is directed and unweighted） | O(n + m) | 布尔约束能否同时满足 boolean constraints satisfiable |
 
 **为什么图类型写在分类上 Why graph type sits on the category:** 同一分类里的黑盒对"有向 / 无向"的要求完全一致（遍历 = 两者皆可；有向图结构 = 仅有向；最短路 = 两者皆可；MST = 仅无向；最大流 = 仅有向），所以它是分类的性质，不是每个黑盒各自的性质。真正需要逐行看的是第三栏**"前提 Requirements"**：最短路分类里三行对负权的要求互不相同（非负 / 可负 / 可负），最大流分类里也有"整数容量 / 非整数容量"的差别，此外还有"是否必须给起点""图是否必须连通"这类逐行或逐分类的前提。
 Within a category the directed/undirected requirement is always the same, so it belongs to the category. The column that genuinely varies row by row is the requirements column (weights, capacities, whether a source must be given, connectivity).
@@ -94,14 +94,14 @@ The third column now collects every precondition (weights, capacities, source, c
 <a id="details-1"></a>
 ### 1. 遍历与连通性 Traversal and connectivity (unweighted graphs)
 
-**DFS — Depth-First Search / 深度优先搜索 — O(n + m)**
+**DFS - Depth-First Search / 深度优先搜索 - O(n + m)**
 
 - 输入 Input: 邻接表 adjacency list; 起点 starting vertex（可选 optional）
 - 输出 Output: `ccnum[]` 连通块编号 component number; `prev[]` 父节点 parent; `pre[]` and `post[]` 进入 / 离开时间 visit and finish times
 - 能做 Use for: 连通块 connected components; 找环 cycle detection; 两点是否连通 whether two vertices are connected; 边分类 edge classification (tree / forward / back / cross); 产生 post 序 post order, which topological sort and SCC both need
 - 注意 Note: 有向、无向都行 directed or undirected. 这是唯一会自动重启、一次跑完所有连通块的遍历 This is the only traversal that restarts automatically and covers all components in one run.
 
-**BFS — Breadth-First Search / 广度优先搜索 — O(n + m)**
+**BFS - Breadth-First Search / 广度优先搜索 - O(n + m)**
 
 - 输入 Input: 邻接表 adjacency list + **必须给起点** a starting vertex is required
 - 输出 Output: `dist[]` 无权最短距离 unweighted shortest distance; `prev[]` 父节点 parent
@@ -113,14 +113,14 @@ The third column now collects every precondition (weights, capacities, source, c
 <a id="details-2"></a>
 ### 2. 有向图的结构 Directed graph structure
 
-**Topological Sort / 拓扑排序 — O(n + m)**
+**Topological Sort / 拓扑排序 - O(n + m)**
 
 - 输入 Input: 有向无环图 a DAG (directed acyclic graph)
 - 输出 Output: `order[]`（source → sink 的顺序 order from source to sink）, 另外 DFS 的所有输出也能用 plus all DFS outputs
 - 能做 Use for: 先修关系 / 任务依赖顺序 prerequisite or task dependency order; 编译顺序 compilation order; 检测"依赖成环所以不可能" detect that a dependency cycle makes it impossible
 - 注意 Note: 只对有向图 directed only, 而且必须是 DAG and the graph must be a DAG
 
-**SCC — Strongly Connected Components / 强连通分量 — O(n + m)**
+**SCC - Strongly Connected Components / 强连通分量 - O(n + m)**
 
 - 输入 Input: 有向图 a directed graph
 - 输出 Output: metagraph（缩点后的 DAG the condensation, which is a DAG）, 按 sink → source 的逆拓扑序 in reverse topological order (sink to source); 以及 `ccnum[]` 等 plus component numbers
@@ -147,8 +147,8 @@ The third column now collects every precondition (weights, capacities, source, c
 <a id="details-4"></a>
 ### 4. 最小生成树 MST (Minimum Spanning Tree)
 
-**Kruskal — O(m log n)**: 输出选中的边列表 returns the selected edge list
-**Prim — O(m log n)**: 输出 `prev[]`（树的结构）returns prev[] giving the tree shape
+**Kruskal - O(m log n)**: 输出选中的边列表 returns the selected edge list
+**Prim - O(m log n)**: 输出 `prev[]`（树的结构）returns prev[] giving the tree shape
 
 - 输入 Input: **连通、无向、带权**的图 + 权重 a connected, undirected, weighted graph plus weights
 - 能做 Use for: 最小生成树 minimum spanning tree; 最便宜地把所有点连起来 cheapest way to connect all vertices (fiber, power grid, roads)
@@ -160,7 +160,7 @@ The third column now collects every precondition (weights, capacities, source, c
 <a id="details-5"></a>
 ### 5. 最大流 Max flow
 
-**Ford-Fulkerson — O(mC)** and **Edmonds-Karp — O(nm²)**
+**Ford-Fulkerson - O(mC)** and **Edmonds-Karp - O(nm²)**
 
 - 输入 Input: **有向图** a directed graph + 正容量 positive capacities + source + sink
 - 输出 Output: `flow[]` 每条边的流量 flow per edge; **C 最大流的值 the max flow value**
@@ -173,7 +173,7 @@ The third column now collects every precondition (weights, capacities, source, c
 <a id="details-6"></a>
 ### 6. 逻辑约束 Logic constraints
 
-**2-SAT — O(n + m)**
+**2-SAT - O(n + m)**
 
 - 输入 Input: 每个子句最多 2 个字面量的 CNF 公式 a CNF formula with at most 2 literals per clause
 - 输出 Output: `assignments[]` 满足赋值 a satisfying assignment; 不可满足返回 "NO" returns "NO" if unsatisfiable; SCC 的输出也能用 SCC outputs are also available
@@ -457,7 +457,7 @@ Once these two are settled, the black box is usually unique.
 ---
 
 <a id="anchors"></a>
-## 七、性质锚句 Property anchors — sentences you can use in a solution
+## 七、性质锚句 Property anchors - sentences you can use in a solution
 
 **怎么用 How to use.** 每个黑盒下面 2–4 句，都是可以直接写进 (b) 的英文句子；括号里是中文解释和关键词。复习时只盯**关键词**，考场上从关键词扩写成一整句。标了 *derived* 的句子不是定义，需要你在 (b) 里补一句理由（通常就是"两个方向 + 排除绕路"）。
 

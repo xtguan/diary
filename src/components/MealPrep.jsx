@@ -11,7 +11,7 @@ const UI = {
       'For people who want to eat well without making a decision every evening. Most of the food comes from one Walmart run, the cooking happens in one long session, and the fridge carries the rest of the week. Meals lean on protein and vegetables; the starchy sides and sweets are portioned rather than banned. The portions are planned on purpose. So is the grocery bill. Corporate slaves and wage slaves welcome.',
     houseRules:
       'House rules: Walmart groceries, one prep day, protein and vegetables first, and absolutely no cooking on Wednesday.',
-    kicker: 'Sunday meal prep',
+    kicker: 'Weekly meal prep',
     language: 'Language',
     english: 'EN',
     chinese: '中文',
@@ -26,7 +26,7 @@ const UI = {
     intro:
       '写给想吃得健康、又不想每天晚上做决定的人。大部分食材来自一次沃尔玛采购，做饭集中在一天，剩下的一周交给冰箱。每餐以蛋白质和蔬菜为主，主食和甜食按份装，而不是完全禁掉。份量是提前计划好的，菜钱也是。打工牛马，欢迎入座。',
     houseRules: '本店规矩：沃尔玛优先，一天备完，蛋白质和蔬菜先装，周三绝对不开火。',
-    kicker: '周日备餐',
+    kicker: '每周备餐',
     language: '语言',
     english: 'EN',
     chinese: '中文',

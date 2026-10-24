@@ -7,7 +7,7 @@ import fraudCover from '../assets/photos/fraud-cover.jpg'
 
 const projects = [
   {
-    title: 'FRTB — Market Risk Tools',
+    title: 'FRTB - Market Risk Tools',
     thumbnail: frtbDetail,
     subtitle: 'Built a cutting-edge platform for market risk calculations and regulatory compliance.',
     tech: ['Java', 'Spring Boot', 'Spark', 'Hadoop', 'SQL', 'Unix'],
@@ -16,7 +16,7 @@ const projects = [
       {
         title: 'Project Overview',
         paragraphs: [
-          'Imagine building a platform that helps banks prepare for the next big financial storm—sounds intense, right? That’s exactly what the Fundamental Review of the Trading Book (FRTB) project was all about. We created a system to calculate market risk, meet strict regulatory standards, and ensure financial stability.'
+          'Imagine building a platform that helps banks prepare for the next big financial storm-sounds intense, right? That’s exactly what the Fundamental Review of the Trading Book (FRTB) project was all about. We created a system to calculate market risk, meet strict regulatory standards, and ensure financial stability.'
         ]
       },
       {
@@ -32,7 +32,7 @@ const projects = [
         bullets: [
           'Built Java/Spring Boot services and Spark pipelines that handled data like a pro.',
           'Optimized SQL queries and managed Hadoop workflows to keep things running smoothly.',
-          'Automated repetitive tasks with Unix scripting—because who doesn’t love saving time?',
+          'Automated repetitive tasks with Unix scripting-because who doesn’t love saving time?',
           'Worked closely with stakeholders to ensure our solutions hit the mark for both business and regulatory needs.'
         ]
       },
@@ -70,7 +70,7 @@ const projects = [
     ]
   },
   {
-    title: 'Fraud IT — Systems Integration',
+    title: 'Fraud IT - Systems Integration',
     thumbnail: fraudCover,
     subtitle: 'Served as Integration Lead bridging architecture and development teams for scalable fraud systems.',
     tech: ['Java', 'Spring Boot', 'APIs', 'Azure Service Bus', 'Kafka', 'OpenShift', 'REST', 'SOAP'],
@@ -79,7 +79,8 @@ const projects = [
       {
         title: 'The Challenge',
         paragraphs: [
-          'In a complex financial environment, siloed systems and vendor integrations posed significant risks to fraud detection and operational efficiency. The need was for a unified integration layer connecting diverse payment channels, anomaly detection engines, and vendor platforms while ensuring regulatory compliance and zero downtime.'
+          'In a complex financial environment, siloed systems and vendor integrations posed significant risks to fraud detection and operational efficiency. The need was for a unified integration layer connecting diverse payment channels, anomaly detection engines, and vendor platforms while ensuring regulatory compliance and zero downtime.',
+          'The threat was not a single attacker. It was a moving set of methods - stolen credentials, synthetic identities, payment manipulation, compromised vendors - each probing for a seam between systems.'
         ]
       },
       {
@@ -97,16 +98,15 @@ const projects = [
           'Operational Efficiency: Streamlined integration processes, reducing deployment time for new modules and improving delivery predictability.',
           'Risk Mitigation: Resolved system bottlenecks, ensuring seamless data flow across transaction hubs and enhanced fraud detection capabilities.',
           'Team Growth: Mentored junior engineers, fostering technical excellence and collaborative problem-solving in a hands-on leadership role.',
-          'Compliance Excellence: Achieved full alignment with industry standards, reinforcing the security and stability of financial integrations.'
+          'Compliance Excellence: Achieved full alignment with industry standards, reinforcing the security and stability of financial integrations.',
+          'Security in the path: Kept authentication and message flows consistent across vendor boundaries, so suspicious signals reached detection instead of stalling in transit.'
         ]
       },
       {
-        title: 'Key Skills Demonstrated',
-        bullets: [
-          'Java Development: Proficient in Java 11+, Spring Boot, Spring Integration, and reactive programming.',
-          'API & Messaging: Expertise in REST/SOAP/GraphQL APIs, Azure Service Bus, Kafka, and IBM MQ.',
-          'Platform Experience: Hands-on with OpenShift Container Platform and Azure for containerized workloads.',
-          'Leadership: 8+ years in software engineering, with 3+ years in integration-focused lead roles.'
+        title: 'Why the Plumbing Matters',
+        paragraphs: [
+          'Fraud systems fail quietly. A dropped message, an expired token, or a vendor integration that goes dark does not look like an incident; it looks like a normal day, while a fraudulent payment moves through. The integration layer is where those signals either arrive or disappear.',
+          'That is the part of security I care about. We are not going to stop every fraudster, and the work is rarely dramatic. But a secure, consistent integration layer shortens the distance between an attempt and a detection - and that means fewer people get hurt. It is defensive, unglamorous work, and worth doing well. The best outcome is a fraud attempt that never becomes a customer story.'
         ]
       }
     ]

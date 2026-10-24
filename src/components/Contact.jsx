@@ -5,7 +5,7 @@ export default function Contact(){
     <section id="contact" className="card contact-section">
       <h2>Contact & Availability</h2>
       <p className="muted">
-        I’m always interested in thoughtful conversations, collaborations, and new ideas — especially around software, storytelling, and creative projects.
+        I’m always interested in thoughtful conversations, collaborations, and new ideas - especially around software, storytelling, and creative projects.
       </p>
 
       <div className="contact-grid">

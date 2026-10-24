@@ -9,11 +9,11 @@ export default {
   thumbnail,
   content: `# New York: The Met, Broadway, and City Walks
 
-*September 2026 — New York City*
+*September 2026 - New York City*
 
 New York was the first stop of my trip, and it made an immediate impression. The city has a way of making even an ordinary walk feel like an event: a train arriving overhead, a glimpse of a theatre marquee, sunlight moving across the walls of a museum, or a small pocket of green appearing between tall buildings.
 
-## The Met — an afternoon with art
+## The Met - an afternoon with art
 
 The Metropolitan Museum of Art was one of the places I was most looking forward to seeing. It is the kind of museum where a single visit can only ever be an introduction. Every room seems to open into another period, another material, another way of seeing the world.
 

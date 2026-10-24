@@ -74,8 +74,8 @@ addable through file addition and configuration updates only, not code refactori
 3. **Code Changes**: Edit React components in `src/components/`. Follow existing
    component structure and naming conventions.
 4. **Build & Deploy**:
-   - `npm run build` — Runs sitemap generation and Vite production build.
-   - `npm run deploy` — Deploys `dist/` to GitHub Pages (requires `gh-pages` package).
+   - `npm run build` - Runs sitemap generation and Vite production build.
+   - `npm run deploy` - Deploys `dist/` to GitHub Pages (requires `gh-pages` package).
    - Do NOT run build/dev proactively in automated agents; it may destabilize sessions.
 
 ## Governance

@@ -1,21 +1,63 @@
-import illustration from '../assets/bakery/mini-fruit-tarts.svg'
+import tartPlate from '../assets/bakery/mini-fruit-tarts-plate.jpg'
+import tartTray from '../assets/bakery/mini-fruit-tarts-tray.jpg'
+import tartBubbling from '../assets/bakery/mini-fruit-tarts-bubbling.jpg'
+import tartSecondTray from '../assets/bakery/mini-fruit-tarts-second-tray.jpg'
+import tartOven from '../assets/bakery/mini-fruit-tarts-oven.jpg'
+import tartShells from '../assets/bakery/mini-fruit-tarts-shells.jpg'
 
 export default {
   slug: 'sugar-reduced-mini-fruit-crumble-tarts',
   date: '2026-10-23',
   category: 'sugar-reduced',
-  thumbnail: illustration,
+  thumbnail: tartPlate,
+  photos: [
+    {
+      src: tartTray,
+      caption: {
+        en: 'The first step: E.D. Smith blueberry pie filling spooned into frozen Great Value tart shells.',
+        zh: '第一步：把 E.D. Smith 蓝莓派馅舀进冷冻的 Great Value 塔壳。',
+      },
+    },
+    {
+      src: tartBubbling,
+      caption: {
+        en: 'Golden edges, jam still bubbling.',
+        zh: '边缘金黄，果酱还在冒泡。',
+      },
+    },
+    {
+      src: tartSecondTray,
+      caption: {
+        en: 'The same tray, a little paler on top.',
+        zh: '同一盘，表面颜色浅一点。',
+      },
+    },
+    {
+      src: tartOven,
+      caption: {
+        en: 'The tray going into the oven.',
+        zh: '烤盘进烤箱。',
+      },
+    },
+    {
+      src: tartShells,
+      caption: {
+        en: 'The shells, topped with squares of cheese for this batch.',
+        zh: '这一批的塔壳上铺了奶酪片。',
+      },
+    },
+  ],
   content: {
     en: {
       categoryLabel: 'Sugar-reduced',
       title: 'Mini Fruit Crumble Tarts',
       subtitle: 'Frozen shells · fruit from a can · almond crumble',
       summary:
-        'Six tarts made from frozen shells and canned pie filling, with fresh apple to stretch the fruit and an almond-walnut crumble on top. The rest of the shells stay in the freezer.',
+        'Eight tarts made from frozen shells and canned pie filling, with fresh apple to stretch the fruit and an almond-walnut crumble on top. The rest of the shells stay in the freezer.',
       intro:
-        'I make these when I want something warm and sweet after dinner but do not want to eat a whole pie. Six shells come out of the freezer, the fruit gets lifted out of a can of pie filling with a fork (most of the thick syrup stays behind), and a few spoonfuls of almond, oat and walnut crumble go on top. The fresh apple is there to make the fruit go further and keep the filling from tasting flat. They come out of the oven bubbling and are best after ten minutes on the counter, when the filling has set and the topping has crisped.',
+        'I make these when I want something warm and sweet after dinner but do not want to eat a whole pie. Eight shells come out of the freezer, the fruit gets lifted out of a can of pie filling with a fork (most of the thick syrup stays behind), and a few spoonfuls of almond, oat and walnut crumble go on top. The fresh apple is there to make the fruit go further and keep the filling from tasting flat. They come out of the oven bubbling and are best after ten minutes on the counter, when the filling has set and the topping has crisped.',
       stats: [
-        { label: 'Yield', value: '6 mini tarts' },
+        { label: 'Yield', value: '8 mini tarts' },
         { label: 'Prep', value: '5 min' },
         { label: 'Bake', value: '15–18 min' },
         { label: 'Oven', value: '400°F / 200°C' },
@@ -25,12 +67,12 @@ export default {
           title: 'Base & filling',
           items: [
             {
-              amount: '6',
+              amount: '8',
               name: 'Great Value frozen tart shells',
               note: 'Straight from the freezer. No need to thaw.',
             },
             {
-              amount: '6–8 tbsp',
+              amount: '8–10 tbsp',
               name: 'E.D. Smith pie filling',
               note: 'Apple, cherry or blueberry.',
             },
@@ -44,14 +86,14 @@ export default {
         {
           title: 'Cinnamon–almond crumble',
           items: [
-            { amount: '2 tbsp', name: 'almond flour' },
+            { amount: '2½ tbsp', name: 'almond flour' },
             {
-              amount: '1 tbsp',
+              amount: '1⅓ tbsp',
               name: 'rolled oats',
               note: 'For crunch and a little fibre.',
             },
             {
-              amount: '1½–2 tbsp',
+              amount: '2–2½ tbsp',
               name: 'chopped walnuts',
               note: 'Crushed by hand is fine.',
             },
@@ -61,7 +103,7 @@ export default {
               note: 'Full ¼ tsp for apple, half for berry fillings.',
             },
             {
-              amount: '1 tsp',
+              amount: '1¼ tsp',
               name: 'canola oil',
               note: 'Or three or four sprays. No water or milk.',
             },
@@ -73,7 +115,7 @@ export default {
           title: 'Preheat and prick the bases',
           body: [
             'Heat the oven to 400°F (200°C) and move the rack to the lowest position. The bases need heat from below or they stay pale and soft.',
-            'Take six shells straight from the freezer and set them on a baking tray. Prick each base two or three times with a fork so steam can escape and the pastry does not puff up under the filling.',
+            'Take eight shells straight from the freezer and set them on a baking tray. Prick each base two or three times with a fork so steam can escape and the pastry does not puff up under the filling.',
           ],
         },
         {
@@ -104,7 +146,7 @@ export default {
       notes: [
         {
           title: 'Leftover pie filling',
-          body: 'One 540 mL can makes far more than six tarts. I spoon the rest into small freezer bags and thaw one for the next batch.',
+          body: 'One 540 mL can makes far more than eight tarts. I spoon the rest into small freezer bags and thaw one for the next batch.',
         },
         {
           title: 'This is still a treat',
@@ -129,11 +171,11 @@ export default {
       title: '控糖香脆迷你水果塔',
       subtitle: '冷冻塔壳 · 罐头果肉 · 杏仁酥粒',
       summary:
-        '6 个冷冻塔壳，罐头派馅只取果肉，拌一点新鲜苹果丁，再盖一层杏仁核桃酥粒。吃几个烤几个，剩下的塔壳继续冷冻。',
+        '8 个冷冻塔壳，罐头派馅只取果肉，拌一点新鲜苹果丁，再盖一层杏仁核桃酥粒。吃几个烤几个，剩下的塔壳继续冷冻。',
       intro:
-        '想吃点热乎的甜食、又不想一次吃掉一整个派的时候，我会做这个。6 个塔壳直接从冷冻室拿出来，用叉子把罐头里的果肉捞出来，大部分糖胶留在罐里；再撒上杏仁粉、燕麦和核桃拌的酥粒。新鲜苹果丁一方面让果肉更耐吃，一方面也让味道不那么单调。刚出炉时馅是滚烫的，晾十分钟再吃，馅会收紧，塔皮和顶上的酥粒也才够脆。',
+        '想吃点热乎的甜食、又不想一次吃掉一整个派的时候，我会做这个。8 个塔壳直接从冷冻室拿出来，用叉子把罐头里的果肉捞出来，大部分糖胶留在罐里；再撒上杏仁粉、燕麦和核桃拌的酥粒。新鲜苹果丁一方面让果肉更耐吃，一方面也让味道不那么单调。刚出炉时馅是滚烫的，晾十分钟再吃，馅会收紧，塔皮和顶上的酥粒也才够脆。',
       stats: [
-        { label: '份量', value: '6 个迷你塔' },
+        { label: '份量', value: '8 个迷你塔' },
         { label: '准备', value: '5 分钟' },
         { label: '烘烤', value: '15–18 分钟' },
         { label: '温度', value: '400°F（200°C）' },
@@ -143,12 +185,12 @@ export default {
           title: '塔底与内馅',
           items: [
             {
-              amount: '6 个',
+              amount: '8 个',
               name: 'Great Value 冷冻塔壳',
               note: '直接从冷冻室拿出来，不需要解冻。',
             },
             {
-              amount: '6–8 大勺',
+              amount: '8–10 大勺',
               name: 'E.D. Smith 罐头派馅',
               note: '苹果、樱桃或蓝莓口味都可以。',
             },
@@ -162,14 +204,14 @@ export default {
         {
           title: '肉桂杏仁酥粒顶层',
           items: [
-            { amount: '2 大勺', name: '杏仁粉（almond flour）' },
+            { amount: '2.5 大勺', name: '杏仁粉（almond flour）' },
             {
-              amount: '1 大勺',
+              amount: '1⅓ 大勺',
               name: '燕麦片（rolled oats）',
               note: '增加脆感，也有一点纤维。',
             },
             {
-              amount: '1.5–2 大勺',
+              amount: '2–2.5 大勺',
               name: '核桃碎',
               note: '用手捏碎就行。',
             },
@@ -179,7 +221,7 @@ export default {
               note: '苹果馅可以放满 1/4 小勺，蓝莓或樱桃放一半。',
             },
             {
-              amount: '1 小勺',
+              amount: '1.25 小勺',
               name: '菜籽油',
               note: '或者喷 3–4 下。不要加水或牛奶。',
             },
@@ -191,7 +233,7 @@ export default {
           title: '预热烤箱，给塔壳扎孔',
           body: [
             '烤箱预热到 400°F（200°C），烤网放到最下层。底火不够的话，塔底容易发白、发软。',
-            '6 个塔壳保持冻硬直接摆上烤盘，用叉子在每个底部扎 2–3 个小孔，让蒸汽散出去，塔底就不会鼓起来顶住馅。',
+            '8 个塔壳保持冻硬直接摆上烤盘，用叉子在每个底部扎 2–3 个小孔，让蒸汽散出去，塔底就不会鼓起来顶住馅。',
           ],
         },
         {
@@ -222,7 +264,7 @@ export default {
       notes: [
         {
           title: '剩下的派馅',
-          body: '一罐 540 mL 做 6 个小塔会剩一大半。我把剩下的分装进小保鲜袋冷冻，下次提前拿一袋出来解冻。',
+          body: '一罐 540 mL 做 8 个小塔会剩一大半。我把剩下的分装进小保鲜袋冷冻，下次提前拿一袋出来解冻。',
         },
         {
           title: '这仍然是一份甜点',

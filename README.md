@@ -1,4 +1,4 @@
-# Xiaotang Guan — Personal Website
+# Xiaotang Guan - Personal Website
 
 A single-page personal site built with **React 18 + Vite 5**. It brings together a short profile, software projects, a blog and study-notes library, two food sections (bakery and weekly meal prep), a photo gallery, and contact details.
 
@@ -13,7 +13,7 @@ A single-page personal site built with **React 18 + Vite 5**. It brings together
 | Projects & Work | `#projects` | Expandable project cards and case-study details |
 | Blog & Learning Notes | `#blog` | Search, category filters, essays, travel journals and study notes |
 | Bakery | `#bakery` | **The Corporate Captive’s Kitchen & Bakery** / **公司囚徒的厨房与烘焙坊** |
-| Meal Prep | `#meal-prep` | **Clocked Out & Cooked Up** / **下班开火** — weekly prep entries |
+| Meal Prep | `#meal-prep` | **Clocked Out & Cooked Up** / **下班开火** - weekly prep entries |
 | Photo Gallery | `#gallery` | Albums loaded from `src/photos/` |
 | Contact | `#contact` | Contact links and footer |
 

@@ -11,7 +11,7 @@ import roastChickenLegs from '../assets/meal-prep/roast-chicken-legs.jpg'
 export default {
   slug: 'week-1',
   date: '2026-10-12',
-  thumbnail: roastPotatoes,
+  thumbnail: chickenBreast,
   photos: [
     {
       src: ovenTrays,
@@ -32,13 +32,6 @@ export default {
       caption: {
         en: 'Air-fryer mushrooms: darker, chewier, and gone first.',
         zh: '空气炸锅口蘑，颜色更深、口感更韧，也最先被吃完。',
-      },
-    },
-    {
-      src: chickenBreast,
-      caption: {
-        en: 'Seasoned chicken breast, ready to slice.',
-        zh: '调好味的鸡胸肉，切片备用。',
       },
     },
     {
@@ -67,6 +60,13 @@ export default {
       caption: {
         en: 'Roast chicken legs with scallion and garlic.',
         zh: '葱蒜烤鸡腿肉。',
+      },
+    },
+    {
+      src: roastPotatoes,
+      caption: {
+        en: 'Roast potatoes, straight off the tray.',
+        zh: '刚出炉的烤土豆。',
       },
     },
   ],
@@ -173,7 +173,7 @@ export default {
         {
           name: 'Roast and air-fryer mushrooms',
           detail:
-            'Oyster mushrooms shrink to nothing and then disappear from the containers first.',
+            'White mushrooms shrink to nothing and then disappear from the containers first.',
         },
         {
           name: 'Boiled eggs',
