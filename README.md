@@ -1,114 +1,166 @@
-# Personal Website (Vite + React)
+# Xiaotang Guan — Personal Website
 
-This repository is a minimal starter for a personal website (portfolio, blog, photo gallery) built with Vite + React. The design is modern and minimal; replace content and images with your own.
+A single-page personal site built with **React 18 + Vite 5**. It brings together a short profile, software projects, a blog and study-notes library, two food sections (bakery and weekly meal prep), a photo gallery, and contact details.
 
-Get started locally
+**Live site:** https://xtguan.github.io/diary/
 
-1. Install dependencies
+## Current sections
+
+| Section | Anchor | What it contains |
+| --- | --- | --- |
+| About | `#about` | Intro, current focus, and links |
+| Skills | `#skills` | Skill groups and tools |
+| Projects & Work | `#projects` | Expandable project cards and case-study details |
+| Blog & Learning Notes | `#blog` | Search, category filters, essays, travel journals and study notes |
+| Bakery | `#bakery` | **The Corporate Captive’s Kitchen & Bakery** / **公司囚徒的厨房与烘焙坊** |
+| Meal Prep | `#meal-prep` | **Clocked Out & Cooked Up** / **下班开火** — weekly prep entries |
+| Photo Gallery | `#gallery` | Albums loaded from `src/photos/` |
+| Contact | `#contact` | Contact links and footer |
+
+The Blog, Projects, Bakery, Meal Prep and Gallery headers use the same pattern: eyebrow, title, subtitle, intro paragraph, and a short “house rules” line. The section content is rendered on one page; detail views use query-string deep links.
+
+## Stack and features
+
+- React 18, Vite 5, plain CSS in `src/styles.css`
+- ReactMarkdown 8 with `remark-gfm` for tables inside blog posts
+- Bilingual bakery and meal-prep sections with an EN / 中文 toggle (persisted in `localStorage`)
+- Search and category filters for the blog
+- Automatic reading-time estimates on blog cards and detail views
+- Deep links:
+  - Blog: `?post=<slug>#blog`
+  - Recipe: `?recipe=<slug>#bakery`
+  - Meal prep: `?mealprep=<slug>#meal-prep`
+- Print-friendly recipe view
+- Back-to-top button after scrolling
+- SEO title, description, Open Graph, Twitter and canonical tags via `src/components/Seo.jsx`
+- Production build deployed to GitHub Pages at `/diary/`
+
+## Run locally
+
+Requires Node.js 18 or newer.
 
 ```bash
-cd ~/Downloads/personal-website
 npm install
-```
-
-2. Run development server
-
-```bash
 npm run dev
 ```
 
-3. Build for production
+Vite prints the local URL (typically `http://localhost:5173`).
+
+Build and preview the production bundle:
 
 ```bash
 npm run build
+npm run preview
 ```
 
-Deploy to GitHub Pages (two common options)
+`npm run build` first regenerates `public/sitemap.xml` and then builds the site into `dist/`. `dist/` is ignored by Git.
 
-Option A — Repository pages (recommended for project sites)
-
--- Create a GitHub repo (for example `diary`) and push this code to it.
-- In `package.json` the `deploy` script uses `gh-pages` (already included). Install it locally: `npm install --save-dev gh-pages`.
-- Update `vite.config.js` `base` if your site will be served from a subpath. Example: `base: '/diary/'`.
-- Run:
+The development server uses `base: '/'`; production builds use `base: '/diary/'`. To build for another path, set `VITE_BASE`:
 
 ```bash
-npm run predeploy
+VITE_BASE=/my-repo/ npm run build
+```
+
+## Deploy
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`:
+
+1. checks out the repository
+2. installs Node.js 18 and runs `npm ci`
+3. runs `npm run build`
+4. publishes `dist/` to GitHub Pages using `peaceiris/actions-gh-pages`
+
+The published URL is https://xtguan.github.io/diary/.
+
+The old manual path is still available:
+
+```bash
 npm run deploy
 ```
 
-This will push the `dist` folder to the `gh-pages` branch and publish the site at `https://<yourusername>.github.io/diary/`.
+`npm run predeploy` builds the site first, and `gh-pages` pushes `dist/` to the `gh-pages` branch.
 
-Option B — User/Organization site (`<username>.github.io`)
+If the repository or site URL changes, update the production base in `vite.config.mjs`, `SITE_URL` in `src/components/Seo.jsx`, `baseUrl` in `scripts/generate-sitemap.mjs`, and the static `og:image` URL in `index.html`.
 
-- Create a GitHub repository named exactly `<yourusername>.github.io`.
-- Build the site (`npm run build`).
-- Push the contents of the `dist` folder to the `main` branch root of the repository (or configure a GitHub Action to do it).
-- The site will be available at `https://<yourusername>.github.io/diary/`.
+## Project layout
 
-Notes and next steps
+```text
+src/
+  App.jsx                 page order and section composition
+  styles.css              all site styles
+  components/             Header, About, Skills, Projects, Blog, Bakery,
+                          MealPrep, Gallery, Contact, Footer, BackToTop, Seo
+  posts/                  blog post modules, loaded automatically with import.meta.glob
+  posts/notes/            long-form Markdown study notes imported with ?raw
+  recipes/                bakery recipe modules and registry
+  meal-prep/              weekly meal-prep modules and registry
+  assets/
+    bakery/               served bakery photos and illustrations
+    blog/                 blog cover images
+    meal-prep/            served weekly prep photos
+    photos/               project and detail images
+  photos/                 gallery albums and blog images discovered by Vite globs
+source-photos/            original bakery, meal-prep and project photos (archive)
+scripts/
+  generate-sitemap.mjs    writes public/sitemap.xml before each build
+public/                   static files, including og-image.svg and sitemap.xml
+.github/workflows/
+  deploy.yml              GitHub Pages build and deploy
+```
 
-- Replace `Your Name`, contact info, and project details in `src/components`.
-- Add real images in `public/photos` (replace placeholders).
-- If you want to render markdown into styled HTML inside React, consider adding a small static site generator (e.g., mdx or building at compile-time).
+## Adding content
 
-Adding blog posts
+### Blog & Learning Notes
 
-- Blog posts live in `src/posts/` as JS modules that export an object with `title`, `date`, `thumbnail`, and `content` (see existing `post-1.js`).
-- To categorize posts, add a `category` field. Use one of the recommended values:
-	- `travel` — travel / trip posts
-	- `thoughts` — short essays, reflections, or sharing thoughts
-	- `study-notes` — study notes, reference guides and learning updates
-- Longer study notes can be kept as `.md` files under `src/posts/notes/` and imported with `?raw` (see `post-7.js`). Explicit `<a id="...">` anchors are moved onto the matching headings automatically, so a note's table of contents keeps working.
-- Set `format: 'note'` on a post to use the text-first study-note card. Note cards show `summary` and an estimated reading time instead of a cover photo.
+Posts live in `src/posts/` as JS modules. They are loaded automatically by `import.meta.glob('../posts/*.js')`, so no registry update is needed.
 
-Example post template (`src/posts/new-post.js`):
-```javascript
-import thumb from '../photos/your-image.jpg'
+A post can define:
 
-const content = `
-# Post title
-
-Write your post here in Markdown.
-`
+```js
+import thumbnail from '../assets/blog/your-cover.jpg'
 
 export default {
-	title: 'Post Title',
-	date: '2026-01-04',
-	category: 'thoughts', // or 'travel'
-	thumbnail: thumb,
-	content
+  slug: 'your-post-slug',
+  title: 'Post Title',
+  date: '2026-10-23',
+  category: 'thoughts',        // travel | thoughts | study-notes
+  tags: ['thoughts', 'notes'],
+  summary: 'Short summary shown on note cards.',
+  thumbnail,                   // optional
+  content: `# Post Title
+
+Markdown content goes here.`,
 }
 ```
 
-Adding bakery recipes
+Category labels are title-cased by `formatCategoryLabel`. The code also normalizes legacy values: `learning` becomes `study-notes`, and `sharing thoughts` becomes `thoughts`.
 
-- Bakery recipes live in `src/recipes/` as JS modules that export one recipe object.
-- Each recipe carries both languages under `content.en` and `content.zh`, so the
-  section can be switched between English and Chinese without duplicating the page.
-- Register a new recipe by importing it in `src/recipes/index.js` and adding it to
-  the `recipes` array. The newest `date` is listed first automatically.
-- `thumbnail` is optional. Without it, the card renders a warm placeholder;
-  recipe photos and illustrations live in `src/assets/bakery/`.
-- Add an optional `photos` array for extra shots on the detail page. Each entry
-  takes a local image `src` and a bilingual `caption`.
-- Recipes open at `?recipe=<slug>#bakery`, and the "Print recipe" button hides the
-  rest of the page for a clean paper/PDF copy.
+- **Study notes:** set `format: 'note'` to render a text-first note card with the summary and reading time instead of a cover image.
+- **Reading time:** estimated from CJK characters and Latin words; set `readingTime` explicitly if you want to override it.
+- **Markdown:** headings, lists, links, images, blockquotes and GFM tables are supported. Dates are formatted at noon local time to avoid timezone off-by-one issues.
+- **Anchors:** a long note can use `<a id="anchor-name"></a>` immediately before a heading. The renderer moves that id onto the heading so a table of contents keeps working.
+- **Long notes:** keep a Markdown file under `src/posts/notes/` and import it with `?raw`; see `src/posts/post-7.js` and `src/posts/notes/2026-10-06-graph-theory-black-box.md`.
+- **Deep links:** the selected post is stored in `?post=<slug>#blog`; the detail view has a “Copy permalink” button.
 
-Example recipe skeleton (`src/recipes/my-recipe.js`):
-```javascript
+### Bakery
+
+Recipes live in `src/recipes/` as one module per recipe. Register a new one in `src/recipes/index.js`; recipes are sorted newest first, with same-date recipes keeping registry order.
+
+Each recipe has bilingual `content.en` and `content.zh`:
+
+```js
 import thumbnail from '../assets/bakery/my-recipe.jpg'
-import detailPhoto from '../assets/bakery/my-recipe-photo.jpg'
+import photo from '../assets/bakery/my-recipe-photo.jpg'
 
 export default {
   slug: 'my-recipe',
   date: '2026-10-23',
   category: 'sugar-reduced',
-  thumbnail, // optional
-  photos: [
+  thumbnail,                   // optional
+  photos: [                    // optional detail-page gallery
     {
-      src: detailPhoto,
-      caption: { en: 'A caption for the detail page.', zh: '详情页里的图片说明。' },
+      src: photo,
+      caption: { en: 'Caption', zh: '图片说明' },
     },
   ],
   content: {
@@ -119,9 +171,14 @@ export default {
       summary: 'Short card summary.',
       intro: 'Intro paragraph.',
       stats: [{ label: 'Yield', value: '6 tarts' }],
-      ingredients: [{ title: 'Base', items: [{ amount: '1 cup', name: 'Flour', note: 'Optional note' }] }],
-      steps: [{ title: 'Step title', body: ['Paragraph one.', 'Paragraph two.'], tip: 'Optional tip' }],
-      notes: [{ title: 'Note title', body: 'Note body.' }],
+      ingredients: [
+        {
+          title: 'Base',
+          items: [{ amount: '1 cup', name: 'Flour', note: 'Optional note' }],
+        },
+      ],
+      steps: [{ title: 'Step', body: ['Paragraph'], tip: 'Optional tip' }],
+      notes: [{ title: 'Note', body: 'Body' }],
     },
     zh: {
       // same shape, Chinese strings
@@ -130,14 +187,80 @@ export default {
 }
 ```
 
-Adding meal prep weeks
+Served images live in `src/assets/bakery/`. The section language choice is stored in `localStorage`, and the “Print recipe” button opens the browser print dialog with the rest of the page hidden.
 
-- Weekly meal preps live in `src/meal-prep/` as JS modules with bilingual `content`.
-- Each week has a `slug`, `date`, `thumbnail`, an optional `photos` gallery with bilingual captions, and the weekly plan, dishes, prep steps, storage notes and kitchen notes.
-- Add a new week by importing it in `src/meal-prep/index.js` and adding it to the array. Newest dates are listed first.
+### Meal Prep
 
-Source photos
+Weekly entries live in `src/meal-prep/`. Import each new week in `src/meal-prep/index.js` and add it to the array; entries are sorted newest first.
 
-- Original photos that are not served directly live in `source-photos/` (bakery, meal prep and project originals).
-- The site uses the optimized copies in `src/assets/` (for example `src/assets/bakery/`, `src/assets/meal-prep/` and `src/assets/photos/fraud-cover.jpg`).
-- Keep `source-photos/` when clearing your Downloads folder; it is the archive for future re-cropping or re-exporting.
+Each week follows this shape:
+
+```js
+import thumbnail from '../assets/meal-prep/week-2.jpg'
+import photo from '../assets/meal-prep/week-2-trays.jpg'
+
+export default {
+  slug: 'week-2',
+  date: '2026-10-19',
+  thumbnail,
+  photos: [
+    {
+      src: photo,
+      caption: { en: 'Caption', zh: '图片说明' },
+    },
+  ],
+  content: {
+    en: {
+      weekLabel: 'Week 2 · October 19–25, 2026',
+      title: '...',
+      subtitle: '...',
+      summary: '...',
+      intro: '...',
+      sugarNote: '...',
+      stats: [{ label: 'Prep day', value: '1' }],
+      planTitle: 'The week at a glance',
+      meals: [{ title: 'Breakfast', note: '...', items: ['...'] }],
+      dishesTitle: 'What I cooked',
+      dishes: [{ name: '...', detail: '...' }],
+      prepTitle: 'The prep day',
+      prep: [{ title: '...', body: '...' }],
+      galleryTitle: 'The trays behind the week',
+      storageTitle: 'Storage and reheating',
+      storage: ['...'],
+      notesTitle: 'Notes from the kitchen',
+      notes: [{ title: '...', body: '...' }],
+      closing: '...',
+    },
+    zh: {
+      // same shape, Chinese strings
+    },
+  },
+}
+```
+
+Served images live in `src/assets/meal-prep/`. Entries support the same EN / 中文 toggle and deep-link pattern as recipes: `?mealprep=<slug>#meal-prep`.
+
+### Projects and Photo Gallery
+
+- Project cards are defined directly in `src/components/Projects.jsx`; each card opens a detail modal with sections, bullets and an optional image.
+- Gallery images are discovered automatically from `src/photos/` through `import.meta.glob`. Each subfolder becomes an album, using the folder name as its key. Add a friendly display name in `ALBUM_NAMES` inside `src/components/Gallery.jsx`; otherwise the folder name is shown.
+- Gallery and blog content images are served from `src/photos/`; optimized project, bakery, meal-prep and blog-cover images live under `src/assets/`.
+
+## Images and source photos
+
+- Images served by the site live in `src/assets/` (optimized copies) or `src/photos/` (gallery and content images).
+- `source-photos/` keeps the original bakery, meal-prep and project photos for future re-cropping or re-exporting. It is not required at runtime.
+- Keep the served images reasonably sized; phone originals can be much larger than the site needs.
+- `public/` is for static files that should be copied as-is, such as `og-image.svg` and the generated `sitemap.xml`.
+
+## SEO and sitemap
+
+- `src/components/Seo.jsx` sets the page title, description, Open Graph, Twitter and canonical metadata.
+- `index.html` contains the static shell metadata and default Open Graph image.
+- `scripts/generate-sitemap.mjs` writes `public/sitemap.xml` during `npm run build`. It includes the main section anchors plus the blog posts listed in the script’s `posts` array. Add new post slugs there if they should appear in the sitemap.
+
+## Notes
+
+- The site uses hash links for sections and query parameters for detail views; there is no client-side router.
+- `npm run build` is the authoritative check for a production build.
+- There is no automated test runner configured in the repository; verification is currently manual/visual.
