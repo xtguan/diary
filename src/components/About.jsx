@@ -15,6 +15,7 @@ export default function About(){
           <div className="hero-actions">
             <a href="#projects" className="hero-link primary">See my work</a>
             <a href="#blog" className="hero-link secondary">Read the blog</a>
+            <a href="#bakery" className="hero-link secondary">Visit the bakery</a>
           </div>
         </div>
 
@@ -24,6 +25,7 @@ export default function About(){
             <li>Building thoughtful digital experiences</li>
             <li>Writing more travel and reflection posts</li>
             <li>Capturing everyday light through photography</li>
+            <li>Baking lower-sugar desserts worth repeating</li>
           </ul>
         </div>
       </div>

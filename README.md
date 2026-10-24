@@ -77,3 +77,52 @@ export default {
 	content
 }
 ```
+
+Adding bakery recipes
+
+- Bakery recipes live in `src/recipes/` as JS modules that export one recipe object.
+- Each recipe carries both languages under `content.en` and `content.zh`, so the
+  section can be switched between English and Chinese without duplicating the page.
+- Register a new recipe by importing it in `src/recipes/index.js` and adding it to
+  the `recipes` array. The newest `date` is listed first automatically.
+- `thumbnail` is optional. Without it, the card renders a warm placeholder;
+  illustrations and recipe photos live in `src/assets/bakery/`.
+- Add an optional `photos` array for extra shots on the detail page. Each entry
+  takes a local image `src` and a bilingual `caption`.
+- Recipes open at `?recipe=<slug>#bakery`, and the "Print recipe" button hides the
+  rest of the page for a clean paper/PDF copy.
+
+Example recipe skeleton (`src/recipes/my-recipe.js`):
+```javascript
+import thumbnail from '../assets/bakery/my-recipe.svg'
+import detailPhoto from '../assets/bakery/my-recipe-photo.jpg'
+
+export default {
+  slug: 'my-recipe',
+  date: '2026-10-23',
+  category: 'sugar-reduced',
+  thumbnail, // optional
+  photos: [
+    {
+      src: detailPhoto,
+      caption: { en: 'A caption for the detail page.', zh: '详情页里的图片说明。' },
+    },
+  ],
+  content: {
+    en: {
+      categoryLabel: 'Sugar-reduced',
+      title: 'My Recipe',
+      subtitle: 'One-line subtitle',
+      summary: 'Short card summary.',
+      intro: 'Intro paragraph.',
+      stats: [{ label: 'Yield', value: '6 tarts' }],
+      ingredients: [{ title: 'Base', items: [{ amount: '1 cup', name: 'Flour', note: 'Optional note' }] }],
+      steps: [{ title: 'Step title', body: ['Paragraph one.', 'Paragraph two.'], tip: 'Optional tip' }],
+      notes: [{ title: 'Note title', body: 'Note body.' }],
+    },
+    zh: {
+      // same shape, Chinese strings
+    },
+  },
+}
+```

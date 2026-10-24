@@ -20,6 +20,7 @@ const urls = [
   '/#about',
   '/#projects',
   '/#blog',
+  '/#bakery',
   '/#gallery',
   '/#contact'
 ].concat(posts.map(post => `/blog/${post.slug}`))
