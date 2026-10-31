@@ -2,7 +2,7 @@
 
 A single-page personal site built with **React 18 + Vite 5**. It brings together a short profile, software projects, a blog and study-notes library, two food sections (bakery and weekly meal prep), a photo gallery, and contact details.
 
-**Live site:** https://xtguan.github.io/diary/
+**Live site:** https://eva.xiaotang.guan.github.io/diary/
 
 ## Current sections
 
@@ -70,7 +70,7 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`:
 3. runs `npm run build`
 4. publishes `dist/` to GitHub Pages using `peaceiris/actions-gh-pages`
 
-The published URL is https://xtguan.github.io/diary/.
+The published URL is https://eva.xiaotang.guan.github.io/diary/.
 
 The old manual path is still available:
 

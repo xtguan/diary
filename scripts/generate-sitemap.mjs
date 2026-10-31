@@ -12,7 +12,7 @@ const posts = [
   { slug: 'new-york-the-met-and-city-walks', title: 'New York: The Met, Broadway, and City Walks' }
 ]
 
-const baseUrl = 'https://xtguan.github.io/diary'
+const baseUrl = 'https://eva.xiaotang.guan.github.io/diary'
 const now = new Date().toISOString()
 
 const urls = [

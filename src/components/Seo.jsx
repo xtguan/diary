@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 const DEFAULT_TITLE = 'Xiaotang Guan | Personal Website'
 const DEFAULT_DESCRIPTION = 'A personal website for writing, photography, and thoughtful projects.'
 const DEFAULT_IMAGE = '/og-image.svg'
-const SITE_URL = 'https://xtguan.github.io/diary/'
+const SITE_URL = 'https://eva.xiaotang.guan.github.io/diary/'
 
 function normalizePath(path) {
   if (!path) return '/'
