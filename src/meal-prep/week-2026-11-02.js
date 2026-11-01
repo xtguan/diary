@@ -174,7 +174,7 @@ export default {
       summary:
         'A kimbap-heavy prep: rice, spinach, carrots, beef, egg and tuna, plus chicken, meatballs, roast vegetables, a two-cut slow-cooker pork batch, and the blueberry pie from the bakery.',
       intro:
-        'This week was built around kimbap, but most of the cooking happened on Saturday from 7:30 to 11:30. I cooked 5 cups of white rice with 1 cup of coarse grain, soaked overnight, then let a 3-quart Instant Pot finish it in 15 minutes. The fillings came together in pieces: frozen spinach squeezed dry and pressed into patties, pickled radish, roast carrots, egg pancake, roast beef strips, tuna mayo and a chili sauce. Then I rolled six kimbap. The slow cooker ran on Friday: pork collar for 8 hours, then pork tenderloin for 1.5 hours in the same broth; both cold-soaked overnight. Saturday was the big push: chicken thighs into the oven, chicken breast, meatballs, roast beef, potatoes and mushrooms, tomato eggs, egg pancake, tuna, the blueberry pie, and all the slicing. I count 12 cooked dishes. Rice, the pie, and two noodle dinners are the extras.',
+        'This week was built around kimbap, but most of the cooking happened on Saturday from 7:30 to 11:30. I cooked 5 cups of white rice with 1 cup of coarse grain, soaked overnight, then let a 3-quart Instant Pot finish it in 15 minutes. The fillings came together in pieces: frozen spinach squeezed dry and pressed into patties, pickled radish, roast carrots, egg pancake, roast beef strips, tuna mayo and a chili sauce. Then I rolled six kimbap. The slow cooker ran on Friday: pork collar for 8 hours, then pork tenderloin for 1.5 hours in the same broth; both cold-soaked overnight. Saturday was the big push: chicken thighs into the oven, chicken breast, meatballs, roast beef, potatoes and mushrooms, tomato eggs, egg pancake, tuna, the blueberry pie, and all the slicing. This is an oven-heavy prep, and the order matters: potatoes first, then chicken breast and mushrooms, then chicken thighs, then meatballs last. I count 12 cooked dishes. Rice, the pie, and two noodle dinners are the extras.',
       sugarNote:
         'This is a protein-and-vegetable week with rice and kimbap in the mix. The pie and the kimbap rice are portions, not free passes. If you are managing blood sugar, pair the rice with the chicken, eggs or pork and keep the sweet pieces small.',
       stats: [
@@ -232,12 +232,12 @@ export default {
         },
         {
           name: 'Roast white mushrooms',
-          detail: 'Marinated white mushrooms, roasted until their juices concentrated.',
+          detail: 'Marinated white mushrooms, roasted on top of the chicken breast so their juice bastes the chicken.',
         },
         {
           name: 'Roast chicken breast',
           detail:
-            'Six pieces roasted and four sliced for the week. The other two stayed whole for the lunch box.',
+            'Six pieces roasted with the mushrooms on top, then four sliced for the week. The other two stayed whole for the lunch box.',
         },
         {
           name: 'Roast chicken thighs',
@@ -293,12 +293,32 @@ export default {
           body: 'Keep the slow cooker on. Put two pork tenderloins into the hot pork broth and cook on low for 1.5 hours. Take them out, add them to the cold-soak sauce, and leave both cuts in the fridge overnight.',
         },
         {
-          title: 'Saturday, 7:30-11:30',
-          body: 'The main prep window. Chicken thighs go into the oven first. In the same window: frozen spinach, tomato and egg stir-fry, roast chicken breast, oven-baked beef-and-pork meatballs, egg pancake, roast beef strips, tuna, roast potatoes, roast mushrooms, the rice, six kimbap, slicing the pork tenderloin, slicing the chicken thighs and chicken breast, and the blueberry pie. The rice was soaked overnight and cooked for 15 minutes in a 3-quart Instant Pot.',
+          title: 'Saturday, 7:30-11:30: potatoes first',
+          body: 'Cut the small potatoes first, toss them with spices, and get them into the oven. The carrot shreds go in at the same time. This is the first oven load.',
+        },
+        {
+          title: 'Then: chicken breast and mushrooms',
+          body: 'Cut the chicken breast and marinate it with spices. Marinate the white mushrooms separately. Roast them together with the chicken breast on the bottom and the mushrooms on top, so the mushroom juice drips down and keeps the lean chicken tender.',
+        },
+        {
+          title: 'Then: chicken thighs',
+          body: 'Roast the chicken thighs after the chicken breast and mushrooms come out, or on the next rack if there is room.',
+        },
+        {
+          title: 'Then: meatballs last',
+          body: 'Mix the beef and pork with the spices and two eggs, roll the meatballs, and put them into the oven last. They are the final oven load.',
+        },
+        {
+          title: 'While the oven runs',
+          body: 'Thaw and squeeze the frozen spinach, make the tomato and egg stir-fry, cook the egg pancake, mix the tuna with mayo, cook the rice, roll the six kimbap, slice the pork tenderloin, chicken thighs and chicken breast, and make the blueberry pie. The rice was soaked overnight and cooked for 15 minutes in a 3-quart Instant Pot.',
         },
         {
           title: 'Chop and pack',
           body: 'Chop the broccoli, cool everything, and pack the lunch and dinner boxes. Keep the pie and the wet components separate.',
+        },
+        {
+          title: 'Clean and put the kitchen back',
+          body: 'Hand-wash the utensils, pots and mixing bowls that are not dishwasher-safe. Put everything else in the dishwasher. Once the clean tools are dry, collect them and put them back in the kitchen drawers. The prep is not finished until the counter is clear.',
         },
       ],
       galleryTitle: 'The Oct 31 prep, in order',
@@ -347,7 +367,7 @@ export default {
       summary:
         '这一周以紫菜包饭为主：米饭、菠菜、胡萝卜、牛肉、鸡蛋和金枪鱼，再加上鸡肉、肉丸、烤蔬菜、慢炖两种猪肉，以及烘焙区的蓝莓派。',
       intro:
-        '这一周是围着紫菜包饭转的，但大部分菜是在周六 7:30-11:30 做的。5 杯白米加 1 杯粗粮米，提前一晚泡好，用 3 夸脱的 Instant Pot 压 15 分钟。馅料分开做：冷冻菠菜解冻挤干捏成饼、酸萝卜、烤胡萝卜丝、鸡蛋饼、烤牛肉条、金枪鱼蛋黄酱和辣椒酱。然后包了 6 条紫菜包饭。慢炖锅是周五的活：梅花肉低火 8 小时，再把猪里脊放进同一锅汤里煮 1.5 小时，两种肉都用冷泡汁过夜。周六是主战场：鸡腿肉进烤箱，鸡胸肉、肉丸、烤牛肉、土豆、口蘑、番茄炒蛋、鸡蛋饼、金枪鱼、蓝莓派，还有各种切片。我算了一下，一共 12 道熟菜。米饭、蓝莓派和两顿米线是额外的。',
+        '这一周是围着紫菜包饭转的，但大部分菜是在周六 7:30-11:30 做的。5 杯白米加 1 杯粗粮米，提前一晚泡好，用 3 夸脱的 Instant Pot 压 15 分钟。馅料分开做：冷冻菠菜解冻挤干捏成饼、酸萝卜、烤胡萝卜丝、鸡蛋饼、烤牛肉条、金枪鱼蛋黄酱和辣椒酱。然后包了 6 条紫菜包饭。慢炖锅是周五的活：梅花肉低火 8 小时，再把猪里脊放进同一锅汤里煮 1.5 小时，两种肉都用冷泡汁过夜。周六是主战场：鸡腿肉进烤箱，鸡胸肉、肉丸、烤牛肉、土豆、口蘑、番茄炒蛋、鸡蛋饼、金枪鱼、蓝莓派，还有各种切片。这次烤箱很忙，顺序很重要：先烤土豆，再烤鸡胸肉和口蘑，再烤鸡腿肉，最后烤肉丸。我算了一下，一共 12 道熟菜。米饭、蓝莓派和两顿米线是额外的。',
       sugarNote:
         '这一周以蛋白质和蔬菜为主，米饭和紫菜包饭也在里面。派和紫菜包饭的米饭都按份吃，不是无限量。如果你在控糖，把米饭和鸡肉、鸡蛋或猪肉一起吃，甜的部分少一点。',
       stats: [
@@ -390,11 +410,11 @@ export default {
         },
         {
           name: '烤口蘑',
-          detail: '口蘑腌过再烤，汁水收浓。',
+          detail: '口蘑腌过，铺在鸡胸肉上面烤，汁水正好浸到鸡肉里。',
         },
         {
           name: '烤鸡胸肉',
-          detail: '6 块鸡胸肉烤好，4 块切片，剩下 2 块整块留给午餐盒。',
+          detail: '6 块鸡胸肉和口蘑一起烤，鸡胸肉垫底、口蘑在上；烤好 4 块切片，剩下 2 块整块留给午餐盒。',
         },
         {
           name: '烤鸡腿肉',
@@ -445,12 +465,32 @@ export default {
           body: '慢炖锅不关，把 2 条猪里脊放进煮过梅花肉的热汤里，低火 1.5 小时。取出后也加冷泡汁，两种肉一起在冰箱泡一夜。',
         },
         {
-          title: '周六 7:30-11:30',
-          body: '主要备餐时间。先把鸡腿肉放进烤箱；同一个时间段里做：冷冻菠菜、番茄炒蛋、烤鸡胸肉、烤箱烤的牛肉猪肉丸、煎鸡蛋饼、烤牛肉条、金枪鱼、烤土豆、烤口蘑、米饭、6 条紫菜包饭、切猪里脊、切鸡腿肉和鸡胸肉，还有蓝莓派。米饭提前一晚泡好，3 夸脱 Instant Pot 压 15 分钟。',
+          title: '周六 7:30-11:30：先烤土豆',
+          body: '先把小土豆切块、加调料，放进烤箱；胡萝卜丝一起烤。这是第一炉。',
+        },
+        {
+          title: '然后：鸡胸肉和口蘑',
+          body: '鸡胸肉切好，加调料腌；口蘑另外拌料。两者一起烤，鸡胸肉垫底、口蘑铺在上面，口蘑汁往下渗，鸡胸肉就不容易柴。',
+        },
+        {
+          title: '然后：烤鸡腿肉',
+          body: '鸡胸肉和口蘑出炉后，再烤鸡腿肉；烤箱有空间的话也可以放在下一层。',
+        },
+        {
+          title: '最后：牛肉猪肉丸',
+          body: '牛肉猪肉馅加调料和 2 颗鸡蛋，搓成丸子，最后进烤箱。这是最后一炉。',
+        },
+        {
+          title: '烤箱工作的时候',
+          body: '冷冻菠菜解冻挤干、做番茄炒蛋、煎鸡蛋饼、金枪鱼拌蛋黄酱、煮米饭、包 6 条紫菜包饭、切猪里脊、切鸡腿肉和鸡胸肉，还有做蓝莓派。米饭提前一晚泡好，3 夸脱 Instant Pot 压 15 分钟。',
         },
         {
           title: '切西蓝花，装盒',
           body: '西蓝花切好，所有东西放凉再装盒。派和水分多的菜分开。',
+        },
+        {
+          title: '洗锅洗碗，收拾厨房',
+          body: '不能进洗碗机的锅、盆和工具手洗；其余的都放进洗碗机。等工具晾干后收好，放回厨房抽屉。台面清空，备餐才算结束。',
         },
       ],
       galleryTitle: '10 月 31 日的备餐，按顺序',
