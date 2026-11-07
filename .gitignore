@@ -5,3 +5,5 @@ dist/
 /.vscode
 npm-debug.log
 *.local
+
+.agents/skills/food-journal/

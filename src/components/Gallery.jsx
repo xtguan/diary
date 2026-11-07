@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
+const ALBUM_COVERS = {
+  '2026-08-31-new-york': 'bryant-park-1.jpg',
+  '2026-09-01-boston': '1788566539008.jpg',
+  '2026-09-03-new-port': '1788566890494.jpg',
+  '2026-09-food': '1788567279269.jpg',
+}
+
 const ALBUM_NAMES = {
   '2022-10-03-park':        'Guild Park & Gardens',
   '2023-12-04-xmas':        'Toronto Christmas',
@@ -78,7 +85,8 @@ export default function Gallery(){
         <div className="album-grid">
           {albumKeys.map(key => {
             const photos = albums[key]
-            const cover = photos[0]
+            const coverName = ALBUM_COVERS[key]
+            const cover = photos.find(photo => photo.name === coverName) || photos[0]
             return (
               <div key={key} className="album-card" onClick={() => setActive(key)}>
                 <div className="album-card-img">
