@@ -38,8 +38,8 @@ export default {
     {
       src: roastPotatoesTray,
       caption: {
-        en: 'Roast potatoes, the first tray out.',
-        zh: '烤土豆，第一盘出炉。',
+        en: 'Buttermilk squash with cinnamon, black pepper and oil, air-fried on the plate.',
+        zh: '用空气炸锅做在盘子上的奶油南瓜。',
       },
     },
     {
