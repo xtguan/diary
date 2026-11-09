@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import weeks from '../meal-prep'
+import kitchen from '../meal-prep/kitchen'
 
 const UI = {
   en: {
@@ -272,6 +273,31 @@ export default function MealPrep() {
           </div>
           {languageSwitch}
         </div>
+
+        <details className="meal-prep-kitchen" lang={lang === 'zh' ? 'zh-Hans' : 'en'}>
+          <summary className="meal-prep-kitchen-summary">
+            <span className="meal-prep-kitchen-heading">
+              <span className="meal-prep-kitchen-title">{kitchen[lang].title}</span>
+              <span className="meal-prep-kitchen-intro">{kitchen[lang].intro}</span>
+            </span>
+            <span className="meal-prep-kitchen-chevron" aria-hidden="true" />
+          </summary>
+          <div className="meal-prep-kitchen-groups">
+            {kitchen[lang].groups.map((group) => (
+              <div className="meal-prep-kitchen-group" key={group.title}>
+                <h4>{group.title}</h4>
+                <ul>
+                  {group.items.map((item) => (
+                    <li key={item.name}>
+                      <strong>{item.name}</strong>
+                      {item.use && <span>{item.use}</span>}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </details>
 
         {weeks.length > 0 ? (
           <div className="meal-prep-grid">

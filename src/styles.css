@@ -1623,6 +1623,95 @@ html{scroll-behavior:smooth}
   outline-offset: 2px;
 }
 
+.meal-prep-kitchen {
+  margin-top: 22px;
+  border: 1px solid var(--meal-line);
+  border-radius: 14px;
+  background: var(--meal-soft);
+}
+.meal-prep-kitchen-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 18px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 14px;
+}
+.meal-prep-kitchen-summary::-webkit-details-marker { display: none; }
+.meal-prep-kitchen-summary:focus-visible {
+  outline: 2px solid rgba(79,125,79,0.4);
+  outline-offset: 2px;
+}
+.meal-prep-kitchen-heading { display: block; min-width: 0; }
+.meal-prep-kitchen-title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--meal-accent-dark);
+}
+.meal-prep-kitchen-intro {
+  display: block;
+  margin-top: 2px;
+  color: #6b7a67;
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.meal-prep-kitchen-chevron {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  margin: 0 4px 3px 0;
+  border-right: 2px solid var(--meal-accent);
+  border-bottom: 2px solid var(--meal-accent);
+  transform: rotate(45deg);
+  transition: transform 160ms ease;
+}
+.meal-prep-kitchen[open] .meal-prep-kitchen-chevron {
+  margin-bottom: -3px;
+  transform: rotate(-135deg);
+}
+.meal-prep-kitchen-groups {
+  padding: 0 18px 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.meal-prep-kitchen-group {
+  padding: 14px 16px;
+  border: 1px solid rgba(79,125,79,0.12);
+  border-radius: 12px;
+  background: #fff;
+}
+.meal-prep-kitchen-group h4 {
+  margin: 0 0 8px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--meal-accent);
+}
+.meal-prep-kitchen-group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.meal-prep-kitchen-group li {
+  margin: 0 0 8px;
+  color: #5b544d;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.meal-prep-kitchen-group li:last-child { margin-bottom: 0; }
+.meal-prep-kitchen-group li strong {
+  display: block;
+  color: #2f3d2d;
+  font-weight: 700;
+}
+.meal-prep-kitchen-group li span { display: block; }
+
 .meal-prep-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -2024,6 +2113,7 @@ html{scroll-behavior:smooth}
   .meal-prep-card { grid-template-columns: 1fr; }
   .meal-prep-card-media { min-height: 0; aspect-ratio: 16/9; }
   .meal-prep-meals { grid-template-columns: 1fr; }
+  .meal-prep-kitchen-groups { grid-template-columns: 1fr; }
   .meal-prep-dishes { grid-template-columns: 1fr; }
   .meal-prep-notes { grid-template-columns: 1fr; }
 }
