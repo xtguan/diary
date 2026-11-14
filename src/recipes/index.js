@@ -3,6 +3,7 @@ import miniFruitCrumbleTarts from './mini-fruit-crumble-tarts'
 import blueberryBiscoffPie from './blueberry-biscoff-pie'
 import biscoffCheesecakeTruffles from './biscoff-cheesecake-truffles'
 import puffPastryBaconEggBites from './puff-pastry-bacon-egg-bites'
+import wholeGrainBananaNutMuffins from './whole-grain-banana-nut-muffins'
 
 // To add a recipe: create a file next to this one, export a default object with
 // the same shape (see mini-fruit-crumble-tarts.js), then add it to this array.
@@ -12,6 +13,7 @@ const recipes = [
   blueberryBiscoffPie,
   biscoffCheesecakeTruffles,
   puffPastryBaconEggBites,
+  wholeGrainBananaNutMuffins,
 ]
 
 // Newest first; recipes with the same date keep the order above.
